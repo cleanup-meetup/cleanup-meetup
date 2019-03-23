@@ -1,13 +1,21 @@
 /* General styles for entire website. */
 
+:root {
+    font-size: 13px;
+}
+
 body {
-    font-size: 12px;
     font-family: sans-serif;
     padding: 0;
     margin: 0;
 }
 
+.main-content {
+    padding: 0.75rem;
+}
+
 /* Page layout that does not scroll; it expands to fill the current page. */
+
 .no-scroll-layout {
     position: fixed;
     height: 100%;
@@ -30,6 +38,7 @@ body {
  * Page layout with main content pane and feature aside content pane side-by-side.
  * Aside content will typically be hidden or rearranged on mobile layouts.
  */
+
 .feature-aside-layout {
     display: flex;
     flex-direction: row;
@@ -40,12 +49,92 @@ body {
 }
 
 .feature-aside-layout__aside {
-    flex: 1 0 1px;;
+    flex: 1 0 1px;
+    ;
 }
 
 /* Site navbar. */
+
 .navbar {
     width: 100%;
-    min-height: 3rem;
-    background: lightblue;
+    background: mediumblue;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    height: 4rem;
+    align-items: center;
+}
+
+.navbar-link-list {
+    display: flex;
+    list-style-type: none;
+    padding: 0 1rem;
+    margin: 0;
+}
+
+.navbar__link {
+    text-decoration: none;
+    padding: 0 1rem;
+    color: white;
+    font-weight: bold;
+}
+
+.navbar__link:hover {
+    text-decoration: underline;
+}
+
+/* Emphasised primary action button */
+
+.button {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    color: white;
+    border-radius: 2px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.button.button--primary {
+    background-color: green;
+}
+
+/* Modern input box */
+
+.modern-input {
+    padding: 0.5rem;
+    border-radius: 2px;
+    border: 1px solid gray;
+    margin: 0;
+}
+
+.modern-input--full-width {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Page titles */
+
+.page-title {
+    font-family: "Roboto Slab";
+    font-weight: bold;
+    color: #333;
+}
+
+/* Section header */
+
+.section-heading {
+    font-family: "Roboto Slab";
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding-top: 1em;
+    color: #333;
+}
+
+/* Typical image formatting */
+
+.standard-image {
+    max-width: 100%;
+    margin: 1rem 0;
+    box-sizing: ;
+    border-radius: 3px;
 }
