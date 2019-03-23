@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" type="text/css" href="templates\styles\form.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cleanup Meetup - Create Event</title>
 </head>
 <body>
-    teast
+    <form action="/action_page.php">
+        Event name:<br>
+        <input type="text" name="eventname" value="event name"><br>
+        Location:<br>
+        <input type="text" name="location" value="location"><br>
+        Time:<br>
+        <input type="text" name="time" value="time"><br>
+        Description of event:<br>
+        <textarea name="description" rows="10" cols="40"> </textarea><br>
+        Insert image of location:<br>
+        <input type="file" name="pic" accept="image/*"><br><br>
+        <input type="submit" value="Submit">
+      </form>
 </body>
 </html>
