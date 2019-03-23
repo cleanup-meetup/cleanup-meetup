@@ -5,8 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cleanup Meetup - Home</title>
+    <script src="upcoming-events-map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVmithl9HPMvSzbG-s25PXrLs4rEzGRm8&callback=initMaps"
+    async defer></script>
 </head>
 <body>
-    
+    <nav class="navbar">
+        <a href="index.html"><img src="logo.png" alt="Cleanup Meetup Logo"></a>
+        <ul class="navbar__Links">
+            <li><a href="create_event.html">Create Event</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main class="feature-aside-layout">
+        <section class="feature-aside-layout__content">
+            <h1 class="page-title">Cleanup Meetup</h1>
+        </section>
+        <section class="map-container feature-aside-layout__aside upcoming-events-map map-container--loading">
+            Loading map...
+        </section>
+    </main>
 </body>
 </html>
