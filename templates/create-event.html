@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="templates\styles\form.css">
+    <link rel="stylesheet" type="text/css" href="styles\form.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -14,7 +14,7 @@
             <p>Please fill out this form to create an event</p>
             <hr>
 
-            <label for="event"><b>Event Name</b></label>
+            <label for="event"><b>Event Name</b></label><br>
             <input type="text" placeholder="Enter event name" name="event" required>
             <br>
 
@@ -22,13 +22,17 @@
             <label for="location"><b>Event Location:</b>
             <input type="text" placeholder="Enter event location" name="location" required>
             <br>
+            
+            <label for="eventDay"><b>Day of Event:</b></label><br>
+            <input type="date" placeholder="MM/DD/YYYY" name="eventDay" required>
+            <br>
 
-            <label for="eventTime"><b>Event Time:</b></label>
-            <input type="time" placeholder="00:00" name="eventTime" required>
+            <label for="eventTime"><b>Event Time:</b></label><br>
+            <input type="time" placeholder="00:00:00" name="eventTime" required>
             <br>
 
             <label for="description"><b>Description of Event:</b></label><br>
-            <textarea name="description" rows="10" cols="40" required></textarea>
+            <textarea name="description" rows="10" cols="35" required></textarea>
             <br>
 
             <input type="file" name="pic" accept="image/*"><br><br>

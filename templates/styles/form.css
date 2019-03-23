@@ -14,8 +14,15 @@
     width: 100%;
     opacity: 0.9;
 }
+form { 
+    margin: 0 auto; 
+    width:250px;
+    }
 
 .container{
-    padding: 16px;
+    border-style: solid;
+    padding: 50px;
+    height: 150%;
+    width: 100%;
     text-align: center;
 }
