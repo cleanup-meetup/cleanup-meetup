@@ -7,6 +7,14 @@ body {
     margin: 0;
 }
 
+.full-width {
+    width: 100%;
+}
+
+.main-content {
+    padding: 0.75rem;
+}
+
 /* Page layout that does not scroll; it expands to fill the current page. */
 .no-scroll-layout {
     position: fixed;
@@ -46,6 +54,44 @@ body {
 /* Site navbar. */
 .navbar {
     width: 100%;
-    min-height: 3rem;
-    background: lightblue;
+    background: darkblue;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    height: 4rem;
+}
+
+.navbar-link-list {
+    display: flex;
+    list-style-type: none;
+    padding: 0 1rem;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+}
+
+.navbar__link {
+    text-decoration: none;
+    padding: 0 1rem;
+    color: white;
+    font-weight: bold;
+}
+
+.navbar__link:hover {
+    text-decoration: underline;
+}
+
+/* Emphasised primary action button */
+
+.button {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    color: white;
+    border-radius: 2px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.button.button--primary {
+    background-color: green;
 }
