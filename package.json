@@ -1,0 +1,23 @@
+{
+  "name": "cleanup-meetup",
+  "version": "0.5.0",
+  "description": "Website to create and organize meetups to clean up litter.",
+  "main": " ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cleanup-meetup/cleanup-meetup.git"
+  },
+  "author": "cleanup-meetup",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/cleanup-meetup/cleanup-meetup/issues"
+  },
+  "homepage": "https://github.com/cleanup-meetup/cleanup-meetup#readme",
+  "devDependencies": {
+    "eslint": "^5.15.3",
+    "eslint-config-google": "^0.12.0"
+  }
+}
