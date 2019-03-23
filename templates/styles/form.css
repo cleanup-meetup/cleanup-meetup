@@ -3,3 +3,19 @@
     height:560px;
     width:300px;
 }
+
+.submitForm{
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.container{
+    padding: 16px;
+    text-align: center;
+}
