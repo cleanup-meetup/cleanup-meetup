@@ -13,5 +13,9 @@
         "sourceType": "module"
     },
     "rules": {
+        "linebreak-style": [
+            "warn",
+            "windows"
+        ]
     }
 }
