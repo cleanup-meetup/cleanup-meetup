@@ -1,0 +1,51 @@
+/* General styles for entire website. */
+
+body {
+    font-size: 12px;
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+/* Page layout that does not scroll; it expands to fill the current page. */
+.no-scroll-layout {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.no-scroll-layout__content {
+    height: 100%;
+    width: 100%;
+    flex-grow: 1;
+}
+
+/* 
+ * Page layout with main content pane and feature aside content pane side-by-side.
+ * Aside content will typically be hidden or rearranged on mobile layouts.
+ */
+.feature-aside-layout {
+    display: flex;
+    flex-direction: row;
+}
+
+.feature-aside-layout__content {
+    flex: 0 1 300px;
+}
+
+.feature-aside-layout__aside {
+    flex: 1 0 1px;;
+}
+
+/* Site navbar. */
+.navbar {
+    width: 100%;
+    min-height: 3rem;
+    background: lightblue;
+}
