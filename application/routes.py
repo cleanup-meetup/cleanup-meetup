@@ -27,8 +27,10 @@ def home():
     return render_template('index.html')
 
 #Method called to store an image
-@app.route('/upload', methods=['POST'])
+@app.route('/upload', methods=['GET', 'POST'])
 def upload():
+    if request.method == 'GET':
+        return redirect(url_for('home'))
     file = request.files['image']
     EventNameFile = request.form['EventName']
     EventDateFile = request.form['EventDate']
