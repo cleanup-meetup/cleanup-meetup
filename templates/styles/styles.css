@@ -32,11 +32,11 @@ a:hover {
 }
 
 /* Loading animation */
+
 @keyframes throb {
     from {
         opacity: 1;
     }
-
     to {
         opacity: 0.5;
     }
@@ -149,7 +149,7 @@ a:hover {
 }
 
 .modern-input:focus {
-    box-shadow: 0 0 2px rgba(0,0,0,0.25);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
 }
 
 /* Page titles */
@@ -179,17 +179,19 @@ a:hover {
 }
 
 /* Floating above */
+
 .up--2 {
     z-index: 2;
-    box-shadow: 0 0 4px rgba(0,0,0,0.5)
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5)
 }
 
 .up--1 {
     z-index: 1;
-    box-shadow: 0 0 2px rgba(0,0,0,0.5)
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5)
 }
 
 /* Maps */
+
 .map-container--loading {
     display: flex;
     justify-content: center;
@@ -201,7 +203,7 @@ a:hover {
 .map-container--error::after {
     content: "Error: Upcoming event data failed to load. :(";
     position: absolute;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     top: 0;
     bottom: 0;
     left: 0;
@@ -214,11 +216,13 @@ a:hover {
 }
 
 /* Spacer */
+
 .spacer {
     flex-grow: 1;
 }
 
 /* Footer */
+
 footer {
     font-size: 0.9rem;
     font-style: italic;
@@ -228,7 +232,15 @@ footer {
 }
 
 /* Centered layout */
+
 .centered-content-layout {
     max-width: 40rem;
     margin: auto;
+}
+
+/* Vertically laid out form */
+
+.vertical-form {
+    display: flex;
+    flex-direction: column;
 }
