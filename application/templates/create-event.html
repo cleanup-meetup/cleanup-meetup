@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cleanup Meetup - Create Event</title>
+</head>
+<body>
+    <div class="ball"></div>
+    <nav class="navbar up--2">
+        <a href="index.html" class="navbar__link"><img src="logo.png" alt="Cleanup Meetup Logo"></a>
+        <ul class="navbar-link-list">
+            <li class="navbar-link-list__list-item"><a class="navbar__link" href="about.html">About</a></li>
+            <li class="navbar-link-list__list-item"><a class="navbar__link" href="contact.html">Contact</a></li>
+            <li class="navbar-link-list__list-item"><a class="button button--primary" href="{{ url_for('create_event')  }}">Create
+                    Event</a></li>
+        </ul>
+    </nav>
+    <main class="centered-content-layout">
+        <h1 class="page-title">Create New Meetup</h1>
+        <p>We're excited to clean up the world with you! Fill out this form to host an event.</p>
+        <form action="/upload" method="post" enctype="multipart/form-data" class="vertical-form">
+            <label for="EventName">Event Name</label>
+            <input class="modern-input modern-input--full-width" type="text" placeholder="Enter event name name=EventName" required>
+            <label for="EventLocation">Event Location:</label>
+            <input class="modern-input modern-input--full-width" type="text" placeholder="Enter event location"
+                name="EventLocation" required>
+            <label for="EventDay">Day of Event:</label>
+            <input class="modern-input modern-input--full-width" type="date" placeholder="MM/DD/YYYY" name="EventDay" required>
+            <label for="EventTime">Event Time:</label>
+            <input class="modern-input modern-input--full-width" type="time" placeholder="00:00:00" name="EventTime" required>
+            <label for="EventDescription">Description of Event:</label>
+            <textarea class="modern-input modern-textarea modern-textarea--pad-below" name="EventDescription" rows="10" cols="35" required></textarea>
+            <input class="modern-input modern-input--full-width" type="file" name="image" accept="image/*">
+            <button class="button button--primary">Submit Event</button>
+        </form>
+    </main>
+</body>
+</html>

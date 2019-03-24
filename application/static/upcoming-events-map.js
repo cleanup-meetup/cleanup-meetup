@@ -4,7 +4,8 @@
 
 const CONTAINER_CLASS /** @type {string} */ = 'upcoming-events-map';
 const FUTURE_EVENTS_ENDPOINT /** @type {string} */
-    = 'scripts/future_events_sample.json';
+    = 'future_events_sample.json';
+
 
 /**
  * @typedef {Object} CleanupEvent An upcoming event returned by the API.
@@ -98,7 +99,7 @@ function eventsToMarkers(events, map) {
             map: map
         });
 
-        marker.addListener('click', () => {
+        marker.addListener('click', marker => {
             window.location.href = `view-event.html?eventID=${event.EventID}`;
         });
 
@@ -117,9 +118,5 @@ function showAllMarkers(map, markers) {
     markers.forEach(marker => {
         bounds.extend(marker.position);
     });
-    if (markers.length > 5) {
-        map.fitBounds(bounds);
-    } else {
-        map.setCenter(bounds.getCenter());
-    }
+    map.fitBounds(bounds);
 }
