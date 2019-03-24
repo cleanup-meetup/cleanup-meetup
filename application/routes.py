@@ -6,6 +6,7 @@ from application.models import User, Event
 from werkzeug.utils import secure_filename
 import os
 from geopy.geocoders import Nominatim
+from geopy.distance import geodesic
 from sqlalchemy.orm import scoped_session, sessionmaker
 
 
@@ -114,6 +115,31 @@ def make_json_struct():
         event_list.append(struct)
     print(event_list)
     return event_list
+
+@app.route('/search')
+def search():
+    g = geocoder.ip('me')
+    list = []
+    # print(g.latlng)
+    events = Event.query.all()
+    for event in events:
+        tempTuple = (event.lng, event.lat)
+        distance = geodesic(g.latlng, tempTuple).miles
+        if distance <= 5:
+            list.append(event)
+    #At this point we have a list of events within 5 miles of the user's current location
+    return render_template('search.html', eventList = list)
+
+@app.route('/view/<int:view_id>', methods=['GET','POST'])
+def viewEvent(view_id):
+    event = Event.query.filter_by(id=view_id).first()
+    current_agreed = event.agreed
+    if request.method == 'POST':
+        current_agreed = event.agreed + 1
+        event.agreed = current_agreed
+        db.session.commit()
+        return redirect(url_for('home'))
+    return render_template('view-event.html', e = event)
 
 #very experimental
 @app.route('/future_events_sample.json')
