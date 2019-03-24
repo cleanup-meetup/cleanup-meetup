@@ -2,7 +2,7 @@
 
 :root {
     font-size: 13px;
-    --primary-color: rgb(0, 103, 71);
+    --primary-color: #006747;
     --primary-color-var: #039567;
     --primary-text: #fff;
     --accent-color: #E8EA18;
@@ -42,7 +42,7 @@ a:hover {
         opacity: 1;
     }
     to {
-        opacity: 0.5;
+        opacity: 0.2;
     }
 }
 
@@ -112,8 +112,7 @@ a:hover {
     font-weight: bold;
     display: flex;
     align-items: center;
-    font-family: Roboto Slab;
-    s
+    font-family: "Roboto Slab";
 }
 
 .navbar__link:hover {
@@ -391,4 +390,24 @@ footer {
     font-size: 1rem;
     text-align: center;
     color: var(--primary-text);
+}
+
+.error-message {
+    color: darkred;
+    font-weight: bold;
+    padding: 3rem 0;
+    text-align: center;
+    display: block;
+}
+
+/* Results list */
+.filter-list {
+    overflow-y: scroll;
+    padding: 1rem;
+}
+
+.filter-list__item {
+    border: 1px solid lightgray;
+    border-radius: 2px;
+
 }
