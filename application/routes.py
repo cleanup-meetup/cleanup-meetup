@@ -1,5 +1,5 @@
 from flask import render_template, flash, redirect, url_for, request, send_file, make_response
-from application import app, bootstrap, db
+from application import app, bootstrap
 import geocoder
 import json
 from application.models import User, Event
@@ -59,15 +59,20 @@ def upload():
     print(EventTimeFile)
     print(EventLocationFile)
     print(EventDescriptionFile)
-    geolocator = Nominatim(user_agent="cleanup-meetup")
-    location = geolocator.geocode(EventLocationFile)
-    print((location.latitude, location.longitude))
-
+    try:
+        geolocator = Nominatim(user_agent="cleanup-meetup")
+        location = geolocator.geocode(EventLocationFile)
+        print((location.latitude, location.longitude))
+        locLat = truncate(location.latitude)
+        locLng = truncate(location.longitude)
+    except:
+        flash ("Please enter a valid address!")
+        return render_template('index.html')
     #FOR DEMOING PURPOSES!!!!!!!!
     userID = "UserID1"
-    e = Event(name = EventNameFile, lat = location.latitude, lng = location.longitude, confirmed_users = userID, event_date = EventDateFile, event_creator = userID, fileLocation = file.filename, address = EventLocationFile, description = EventDescriptionFile, time = EventTimeFile)
+    e = Event(name = EventNameFile, lat = locLat, lng = locLng, confirmed_users = userID, event_date = EventDateFile, event_creator = userID, fileLocation = file.filename, address = EventLocationFile, description = EventDescriptionFile, time = EventTimeFile)
     db.session.add(e)
-    db.commit()
+    db.session.commit()
     return render_template('index.html')
 
 @app.route('/create-event', methods=['GET', 'POST'])
@@ -102,3 +107,7 @@ def make_json_struct():
 @app.route('/future_events_sample.json')
 def future_events_sample():
     return render_template('future_events_sample.json')
+
+def truncate(n, decimals=0):
+    multiplier = 10 ** decimals
+    return int(n * multiplier) / multiplier
