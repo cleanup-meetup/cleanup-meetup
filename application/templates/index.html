@@ -1,27 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cleanup Meetup - Home</title>
-    <script type="text/javascript" src="{{ url_for('static', filename='upcoming-events-map.js') }}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVmithl9HPMvSzbG-s25PXrLs4rEzGRm8&callback=initMaps"
-        async defer></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"/>
-</head>
-
-<body class="no-scroll-layout">
-    <nav class="navbar">
-        <a href="index.html" class="navbar__link"><img src="logo.png" alt="Cleanup Meetup Logo"></a>
-        <ul class="navbar-link-list">
-            <li class="navbar-link-list__list-item"><a class="navbar__link" href="about.html">About</a></li>
-            <li class="navbar-link-list__list-item"><a class="navbar__link" href="contact.html">Contact</a></li>
-            <li class="navbar-link-list__list-item"><a class="button button--primary  button--primary--bright" href="{{ url_for('create_event')  }}">Create
-                    Event</a></li>
-        </ul>
-    </nav>
+{% extends 'base.html' %}
+{% block pagename %}Home{% endblock %}
+{% block bodyclass %}no-scroll-layout{% endblock %}
+{% block main %}
     <main class="feature-aside-layout no-scroll-layout__content">
         <section class="feature-aside-layout__content main-content up--1">
             <header>
@@ -46,6 +26,4 @@
             <span>Loading map...</span>
         </section>
     </main>
-</body>
-
-</html>
+{% endblock %}

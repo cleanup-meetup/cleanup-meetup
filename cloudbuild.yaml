@@ -1,4 +1,8 @@
 steps:
-- name: "gcr.io/cloud-builders/gcloud"
-  args: ["app", "deploy"]
+- name: "docker.io/library/python:3.7"
+  args: ['pip', 'install', '-r', 'requirements.txt']
+  env: ['PROJECT_ROOT=github.com/cleanup-meetup/cleanup-meetup']
+- name: "docker.io/library/python:3.7"
+  args: ['python', 'application.py']
+  env: ['PROJECT_ROOT=github.com/cleanup-meetup/cleanup-meetup']
 timeout: "1600s"
