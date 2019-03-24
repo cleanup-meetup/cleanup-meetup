@@ -3,16 +3,19 @@
 {% block bodyclass %}{% endblock %}
 {% block main %}
 <main>
-    <article>
-        <header class="image-wash">
-            <img class="image-wash__background"
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Brussels_Cinquantenaire_R04.jpg/400px-Brussels_Cinquantenaire_R04.jpg">
-            <div clas="image-wash__content">
-                <h1 class="page-title event-title">Clean up the Cinquantenaire Park in Brussels!</h1>
-            </div>
-        </header>
+    <header class="image-wash">
+        <img class="image-wash__background"
+            src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Brussels_Cinquantenaire_R04.jpg">
+        <div clas="image-wash__content">
+            <span class="pre-title">Cleanup Meetup:</span>
+            <h1 class="page-title event-title">Clean up the Cinquantenaire Park in Brussels!</h1>
+        </div>
+    </header>
 
-        <aside class="map-container map-container--loading float-aside">
+    <article class="centered-content-layout centered-content-layout--wide">
+        <h2 class="section-heading centered-content-layout--wide">Event Information</h2>
+
+        <aside data-lat="64" data-lng="32" class="map-container map-container--loading float-aside map-container--float single-event-map">
             <span>Loading map...</span>
         </aside>
 
@@ -27,18 +30,18 @@
             <h3 class="section-heading--subheading">Location</h3>
             <p>
                 This meetup will be located at <a href="https://maps.google.com/my-location" target="_blank"
-                    class="event-location bold">Cinquantenaire Park, Brussels</span>.
+                    class="event-location bold">Cinquantenaire Park, Brussels</a>.
             </p>
 
             <h3 class="section-heading--subheading">Date</h3>
             <p>
-                This cleanup will take place on <span class="bold event-time">January 31, 2020</span> at <span class="bold event-time">4:00 PM</span>.
-                <a href="https://calendar.google.com" class="button">Add to Google Calender</a>
+                This cleanup will take place on <span class="bold event-time">January 31, 2020</span> at <span
+                    class="bold event-time">4:00 PM</span>.
             </p>
         </section>
 
         <section class="event-signup">
-            <a href="event-signup.html?eventid=asdfasdfasd" class="button button-primary">Sign Up!</a>
+            <a href="event-signup?eventid=asdfasdfasd" class="button button--primary">Sign Up!</a>
         </section>
     </article>
 </main>

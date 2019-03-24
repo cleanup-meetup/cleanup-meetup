@@ -2,7 +2,7 @@
 
 :root {
     font-size: 13px;
-    --primary-color: #006747;
+    --primary-color: rgb(0, 103, 71);
     --primary-color-var: #039567;
     --primary-text: #fff;
     --accent-color: #E8EA18;
@@ -84,7 +84,6 @@ a:hover {
 
 .feature-aside-layout__aside {
     flex: 1 0 1px;
-    ;
 }
 
 /* Site navbar. */
@@ -111,22 +110,33 @@ a:hover {
     padding: 0 1rem;
     color: var(--primary-text);
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    font-family: Roboto Slab;
+    s
 }
 
 .navbar__link:hover {
     text-decoration: underline;
+    color: var(--primary-text);
+}
+
+.navbar__logo {
+    max-height: 4rem;
+    max-width: 100%;
 }
 
 /* Emphasised primary action button */
 
 .button {
-    padding: 0.5rem;
+    padding: 0.75rem;
     margin: 0.5rem;
     color: var(--primary-text);
     border-radius: 2px;
     font-weight: bold;
     text-decoration: none;
     border: none;
+    cursor: pointer;
 }
 
 .button.button--primary {
@@ -192,7 +202,7 @@ a:hover {
 .section-heading {
     font-family: "Roboto Slab";
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     padding-top: 1em;
     color: var(--accent-text);
 }
@@ -225,6 +235,7 @@ a:hover {
     align-items: center;
     font-style: italic;
     animation: var(--loading-animation);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .map-container--error::after {
@@ -241,6 +252,11 @@ a:hover {
     color: white;
     font-weight: bold;
     padding-top: 3rem;
+}
+
+.map-container--float {
+    height: 20rem;
+    width: 20rem;
 }
 
 /* Spacer */
@@ -266,6 +282,10 @@ footer {
     margin: auto;
 }
 
+.centered-content-layout--wide {
+    max-width: 60rem;
+}
+
 /* Vertically laid out form */
 
 .vertical-form {
@@ -275,6 +295,68 @@ footer {
 
 .vertical-form label {
     padding: 1.5rem 0 0.5rem 0;
+}
+
+.vertical-form__submit-button {
+    align-self: center;
+    font-family: inherit;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+/* Color wash image */
+
+.image-wash {
+    background: rgb(0, 103, 71, 0.3);
+    position: relative;
+    width: 100%;
+    margin: 0;
+    height: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.image-wash__background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+    min-width: 100%;
+    min-height: 100%;
+    filter: blur(5px);
+}
+
+.image-wash__content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-text);
+}
+
+/* Events */
+
+.event-title {
+    color: var(--primary-text);
+    font-size: 3rem;
+    margin: 0;
+}
+
+/* Float to the side (default right) */
+
+.float-aside {
+    float: right;
+    margin: 1rem;
+}
+
+.event-signup {
+    margin-top: 2rem;
 }
 
 /* Layout for about_us file */
@@ -287,6 +369,7 @@ footer {
     text-align: center;
 }
 
+<<<<<<< HEAD
 .container-contact{
     text-align: center;
 }
@@ -346,3 +429,28 @@ footer {
       margin-top: 0;
     }
   }
+=======
+.container-form {
+    text-align: center;
+}
+
+.logo {
+    height: 500px;
+    width: 500px;
+    background-image: url(/trashLogo.png);
+}
+
+.flexUs {
+    display: flexbox;
+    flex-direction: row-reverse;
+}
+
+.pre-title {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    text-align: center;
+    color: var(--primary-text);
+}
+>>>>>>> master

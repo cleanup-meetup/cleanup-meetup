@@ -2,7 +2,8 @@
  * Initialize and setup upcoming events Google Maps widgets.
  */
 
-const CONTAINER_CLASS /** @type {string} */ = 'upcoming-events-map';
+const FUTURE_EVENT_MAP_CONTAINER_CLASS /** @type {string} */ = 'upcoming-events-map';
+const SINGLE_EVENT_MAP_CONTAINER_CLASS /** @type {string} */ = 'single-event-map';
 const FUTURE_EVENTS_ENDPOINT /** @type {string} */
     = 'future_events_sample.json';
 
@@ -20,9 +21,8 @@ const FUTURE_EVENTS_ENDPOINT /** @type {string} */
  * Initialize all instances of `.upcoming-events-map` with Google Maps.
  */
 function initMaps() {
-    const mapContainers = document.getElementsByClassName(CONTAINER_CLASS);
-
-    maps = Array.from(mapContainers).map(container => {
+    const futureEventMapsContainers = document.getElementsByClassName(FUTURE_EVENT_MAP_CONTAINER_CLASS);
+    futureEventMaps = Array.from(futureEventMapsContainers).map(container => {
         container.classList.remove('map-container--loading');
         return new google.maps.Map(container, {
             center: { lat: -34.397, lng: 150.644 },
@@ -34,9 +34,30 @@ function initMaps() {
             }
         });
     });
+    populateMaps(futureEventMaps);
 
-    populateMaps(maps);
+    const eventMapContainer = document.getElementsByClassName(SINGLE_EVENT_MAP_CONTAINER_CLASS);
+    eventMaps = Array.from(eventMapContainer).map(container => {
+        container.classList.remove('map-container--loading');
+        const coords = { lat: +container.dataset.lat, lng: +container.dataset.lng };
+        let map = new google.maps.Map(container, {
+            center: coords,
+            zoom: 5,
+            disableDefaultUI: true,
+            clickableIcons: false,
+            disableDoubleClickZoom: true,
+            draggable: false,
+            scrollwheel: false
+        });
+        let marker = new google.maps.Marker({
+            position: coords,
+            map: map
+        })
+        showAllMarkers(map, [marker])
+        return map
+    });
 }
+
 
 /**
  * Load the data and then populate the maps with that data.
@@ -100,7 +121,7 @@ function eventsToMarkers(events, map) {
         });
 
         marker.addListener('click', marker => {
-            window.location.href = `view-event.html?eventID=${event.EventID}`;
+            window.location.href = `view-event?eventID=${event.EventID}`;
         });
 
         return marker;
@@ -115,8 +136,12 @@ function eventsToMarkers(events, map) {
 function showAllMarkers(map, markers) {
     const bounds =
         new google.maps.LatLngBounds(markers[0].position, markers[0].position);
-    markers.forEach(marker => {
-        bounds.extend(marker.position);
-    });
-    map.fitBounds(bounds);
+    if(markers.length > 1) {
+        markers.forEach(marker => {
+            bounds.extend(marker.position);
+        });
+        map.fitBounds(bounds);
+    } else {
+        map.panTo(markers[0].position);
+    }
 }
