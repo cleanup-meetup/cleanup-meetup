@@ -1,11 +1,13 @@
-from flask import render_template, flash, redirect, url_for, request, send_file, make_response
-from application import app, bootstrap
+from flask import render_template, flash, redirect, url_for, request, send_file, make_response, session
+from application import app, bootstrap, db
 import geocoder
 import json
 from application.models import User, Event
 from werkzeug.utils import secure_filename
 import os
 from geopy.geocoders import Nominatim
+from sqlalchemy.orm import scoped_session, sessionmaker
+
 
 UPLOAD_FOLDER = 'IMAGES/'
 
