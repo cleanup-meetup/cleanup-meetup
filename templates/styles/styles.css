@@ -226,3 +226,9 @@ footer {
     text-align: center;
     font-weight: bold;
 }
+
+/* Centered layout */
+.centered-content-layout {
+    max-width: 40rem;
+    margin: auto;
+}
