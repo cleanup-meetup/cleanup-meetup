@@ -297,5 +297,5 @@ footer {
 }
 .flexUs{
     display:flexbox;
-    flex-direction: row-reverse;
+    flex-direction: row;
 }
