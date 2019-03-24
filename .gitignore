@@ -189,3 +189,15 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+.ebignore
+
+#virtual server
+venv/*
+
+#IDE stuff
+.idea/*
+__pycache__/*
