@@ -2,7 +2,7 @@
 
 :root {
     font-size: 13px;
-    --primary-color: #006747;
+    --primary-color: rgb(0, 103, 71);
     --primary-color-var: #039567;
     --primary-text: #fff;
     --accent-color: #E8EA18;
@@ -84,7 +84,6 @@ a:hover {
 
 .feature-aside-layout__aside {
     flex: 1 0 1px;
-    ;
 }
 
 /* Site navbar. */
@@ -194,7 +193,7 @@ a:hover {
 .section-heading {
     font-family: "Roboto Slab";
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     padding-top: 1em;
     color: var(--accent-text);
 }
@@ -227,6 +226,7 @@ a:hover {
     align-items: center;
     font-style: italic;
     animation: var(--loading-animation);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .map-container--error::after {
@@ -243,6 +243,11 @@ a:hover {
     color: white;
     font-weight: bold;
     padding-top: 3rem;
+}
+
+.map-container--float {
+    height: 20rem;
+    width: 20rem;
 }
 
 /* Spacer */
@@ -268,6 +273,10 @@ footer {
     margin: auto;
 }
 
+.centered-content-layout--wide {
+    max-width: 60rem;
+}
+
 /* Vertically laid out form */
 
 .vertical-form {
@@ -287,8 +296,17 @@ footer {
 }
 
 /* Color wash image */
+
 .image-wash {
-    background: rgba(0,0,50,0.3);
+    background: rgb(0, 103, 71, 0.3);
+    position: relative;
+    width: 100%;
+    margin: 0;
+    height: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 .image-wash__background {
@@ -297,6 +315,9 @@ footer {
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     z-index: -1;
+    min-width: 100%;
+    min-height: 100%;
+    filter: blur(5px);
 }
 
 .image-wash__content {
@@ -311,8 +332,22 @@ footer {
 }
 
 /* Events */
+
 .event-title {
     color: var(--primary-text);
+    font-size: 3rem;
+    margin: 0;
+}
+
+/* Float to the side (default right) */
+
+.float-aside {
+    float: right;
+    margin: 1rem;
+}
+
+.event-signup {
+    margin-top: 2rem;
 }
 
 /* Layout for about_us file */
@@ -325,15 +360,26 @@ footer {
     text-align: center;
 }
 
-.container-form{
+.container-form {
     text-align: center;
 }
-.logo{
+
+.logo {
     height: 500px;
     width: 500px;
     background-image: url(/trashLogo.png);
 }
-.flexUs{
-    display:flexbox;
+
+.flexUs {
+    display: flexbox;
     flex-direction: row-reverse;
+}
+
+.pre-title {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    text-align: center;
+    color: var(--primary-text);
 }

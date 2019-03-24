@@ -4,4 +4,4 @@ python:
 before_install:
   - pip install -r requirements.txt
 script:
-  - python application.py quit_on_success
+  - python application.py
