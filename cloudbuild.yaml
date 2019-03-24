@@ -1,6 +1,8 @@
 steps:
 - name: "docker.io/library/python:3.7"
-  args: ['pip', 'install', '-r', 'requirements.txt']
+  args: ['pip', 'install', '-r', 'gcr.io/cleanup-meetup/requirements.txt']
+  env: ['PROJECT_ROOT=github.com/cleanup-meetup/cleanup-meetup']
 - name: "docker.io/library/python:3.7"
-  args: ['python', 'application.py']
+  args: ['python', 'gcr.io/cleanup-meetup/application.py']
+  env: ['PROJECT_ROOT=github.com/cleanup-meetup/cleanup-meetup']
 timeout: "1600s"
