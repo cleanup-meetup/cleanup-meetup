@@ -1,0 +1,21 @@
+.header{
+    font-family: 'Courier New', Courier, monospace;
+    width: 100%;
+    background:lightgreen;
+    justify-content: space-between;
+    text-align: center;
+    color: white;
+    height: 4rem;
+}
+  
+  /* Style the container/contact section */
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+  }
+
+  .flex{
+      display: flex;
+      flex-direction:row;
+  }
