@@ -131,7 +131,7 @@ def viewEvent(view_id):
         event.agreed = current_agreed
         db.session.commit()
         return redirect(url_for('home'))
-    return render_template('view.html', event)
+    return render_template('view-event.html', e = event)
 
 #very experimental
 @app.route('/future_events_sample.json')
