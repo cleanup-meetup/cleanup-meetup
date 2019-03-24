@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cleanup Meetup - Home</title>
-    <script type="text/javascript" src="{{ url_for('static', filename='upcoming-events-map.js') }}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVmithl9HPMvSzbG-s25PXrLs4rEzGRm8&callback=initMaps"
-        async defer></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"/>
-</head>
+{% extends 'base.html' %}
+{% block pagename %}Home{% endblock %}
+{% block body %}
 
 <body class="no-scroll-layout">
     <nav class="navbar">
@@ -18,7 +8,8 @@
         <ul class="navbar-link-list">
             <li class="navbar-link-list__list-item"><a class="navbar__link" href="about.html">About</a></li>
             <li class="navbar-link-list__list-item"><a class="navbar__link" href="contact.html">Contact</a></li>
-            <li class="navbar-link-list__list-item"><a class="button button--primary  button--primary--bright" href="{{ url_for('create_event')  }}">Create
+            <li class="navbar-link-list__list-item"><a class="button button--primary  button--primary--bright"
+                    href="{{ url_for('create_event')  }}">Create
                     Event</a></li>
         </ul>
     </nav>
@@ -48,4 +39,4 @@
     </main>
 </body>
 
-</html>
+{% endblock %}

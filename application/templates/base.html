@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
 
+<head>
     <meta charset="UTF-8">
-    <title>Garbage Cleaner</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cleanup Meetup - {% block pagename %}{% endblock %}</title>
+    <script type="text/javascript" src="{{ url_for('static', filename='upcoming-events-map.js') }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVmithl9HPMvSzbG-s25PXrLs4rEzGRm8&callback=initMaps"
+        async defer></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
 </head>
-<body>hello
+
 {% block body %}{% endblock %}
-</body>
+
 </html>

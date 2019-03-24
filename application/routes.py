@@ -102,3 +102,4 @@ def make_json_struct():
 @app.route('/future_events_sample.json')
 def future_events_sample():
     return render_template('future_events_sample.json')
+

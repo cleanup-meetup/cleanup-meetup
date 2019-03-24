@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"/>
-    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}"/>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cleanup Meetup - Create Event</title>
-</head>
+{% extends 'base.html' %}
+{% block pagename %}Create New Event{% endblock %}
+{% block body %}
+
 <body>
     <div class="ball"></div>
     <nav class="navbar up--2">
@@ -38,4 +32,5 @@
         </form>
     </main>
 </body>
-</html>
+
+{% endblock %}
