@@ -8,7 +8,7 @@
     --accent-color: #E8EA18;
     --accent-text: #333;
     --accent-color-var: #9CCB3B;
-    --loading-animation: 0.5s throb ease infinite alternate;
+    --loading-animation: 1.5s throb ease infinite alternate;
 }
 
 body {
@@ -402,12 +402,18 @@ footer {
 
 /* Results list */
 .filter-list {
-    overflow-y: scroll;
     padding: 1rem;
 }
 
 .filter-list__item {
     border: 1px solid lightgray;
     border-radius: 2px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: block;
+}
 
+.filter-list__item .section-heading {
+    margin-top: 0;
+    padding-top: 0;
 }

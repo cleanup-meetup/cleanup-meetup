@@ -10,6 +10,7 @@ const MAPS_KEY = 'AIzaSyBtrkN2c8rrSWUdy6-SKqp8stjYBVb3by8';
 
 const SEARCH_BOX_ID = 'events-map-search-box';
 const RESULTS_CONTAINER_ID = 'search-results-container';
+const EVENT_VIEW_URL = '/view-event?id=';
 
 /**
  * @typedef {Object} CleanupEvent An upcoming event returned by the API.
@@ -25,41 +26,44 @@ const RESULTS_CONTAINER_ID = 'search-results-container';
  */
 function initMaps() {
     const futureEventMapsContainers = document.getElementsByClassName(FUTURE_EVENT_MAP_CONTAINER_CLASS);
-    futureEventMapsContainers[0].classList.remove('map-container--loading');
-    const searchMap = new google.maps.Map(futureEventMapsContainers[0], {
-        center: { lat: -34.397, lng: 150.644 },
-        zoom: 5,
-        disableDefaultUI: true,
-        mapTypeControl: true,
-        mapTypeControlOptions: {
-            position: google.maps.ControlPosition.TOP_RIGHT
-        }
-    });
+    if (futureEventMapsContainers.length) {
+        futureEventMapsContainers[0].classList.remove('map-container--loading');
+        const searchMap = new google.maps.Map(futureEventMapsContainers[0], {
+            center: { lat: -34.397, lng: 150.644 },
+            zoom: 5,
+            disableDefaultUI: true,
+            mapTypeControl: true,
+            mapTypeControlOptions: {
+                position: google.maps.ControlPosition.TOP_RIGHT
+            }
+        });
 
-    const searchBox = document.getElementById(SEARCH_BOX_ID);
+        const searchBox = document.getElementById(SEARCH_BOX_ID);
 
-    const filterCircle = new google.maps.Circle({
-        strokeColor: '#006747',
-        strokeOpacity: 0.8,
-        strokeWeight: 2,
-        fillColor: '#006747',
-        fillOpacity: 0.1,
-        radius: 80000
-    });
+        const filterCircle = new google.maps.Circle({
+            strokeColor: '#006747',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#006747',
+            fillOpacity: 0.1,
+            radius: 80000
+        });
 
-    populateMap(searchMap).then(markers => {
-        if (searchBox && futureEventMapsContainers[0]) {
-            searchBox.addEventListener('change', inputBox => {
-                handleSearchInput(inputBox.target.value, searchMap, filterCircle, markers)
-                    .then(resultsFromMarkers).then(resultsList => {
-                        console.log(resultsList);
-                        const resultsListContainer = document.getElementById(RESULTS_CONTAINER_ID);
-                        resultsListContainer.innerHTML = '';
-                        resultsListContainer.appendChild(resultsList);
-                    });
-            });
-        }
-    });
+        populateMap(searchMap).then(markers => {
+            if (searchBox && futureEventMapsContainers[0]) {
+                searchBox.addEventListener('keyup', inputBox => {
+                    handleSearchInput(inputBox.target.value, searchMap, filterCircle, markers)
+                        .then(resultsFromMarkers).then(resultsList => {
+                            console.log(resultsList);
+                            const resultsListContainer = document.getElementById(RESULTS_CONTAINER_ID);
+                            resultsListContainer.innerHTML = '';
+                            resultsListContainer.appendChild(resultsList);
+                        });
+                });
+            }
+        });
+    }
+
 
     const eventMapContainer = document.getElementsByClassName(SINGLE_EVENT_MAP_CONTAINER_CLASS);
     eventMaps = Array.from(eventMapContainer).map(container => {
@@ -149,9 +153,10 @@ function eventsToMarkers(events, map) {
         });
 
         marker.eventTime = `${event.date | 'soon'} at ${event.time | 'some time'}`;
+        marker.id = event.EventID;
 
         marker.addListener('click', marker => {
-            window.location.href = `view-event?eventID=${event.EventID}`;
+            window.location.href = `${EVENT_VIEW_URL}${event.EventID}`;
         });
 
         return marker;
@@ -258,9 +263,9 @@ function resultsFromMarkers(markers) {
     }
     container.classList.add('filter-list');
     markers.forEach(marker => {
-        const listItem = document.createElement('div');
+        const listItem = document.createElement('a');
+        listItem.href = `${EVENT_VIEW_URL}${marker.id}`;
         listItem.classList.add('filter-list__item');
-        listItem.classList.add('up--1');
         const itemHeading = document.createElement('h3');
         itemHeading.classList.add('section-heading');
         const itemName = document.createTextNode(marker.getTitle());
