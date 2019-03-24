@@ -5,7 +5,7 @@ runtime_config:
 api_version: 1
 threadsafe: true
 env: flex
-entrypoint: python main.py
+entrypoint: python application.py
 
     #[START env]
     #env_variables:
