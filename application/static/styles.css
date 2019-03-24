@@ -1,0 +1,250 @@
+/* General styles for entire website. */
+:root {
+    font-size: 13px;
+    --primary-color: #006747;
+    --primary-color-var: #039567;
+    --primary-text: #fff;
+    --accent-color: #E8EA18;
+    --accent-text: #333;
+    --accent-color-var: #9CCB3B;
+    --loading-animation: 0.5s throb ease infinite alternate;
+}
+body {
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+}
+.main-content {
+    padding: 0.75rem;
+}
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+a:hover {
+    color: var(--primary-color-var);
+}
+
+/* Loading animation */
+
+@keyframes throb {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.5;
+    }
+}
+/* Page layout that does not scroll; it expands to fill the current page. */
+.no-scroll-layout {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+.no-scroll-layout__content {
+    height: 100%;
+    width: 100%;
+    flex-grow: 1;
+}
+/*
+ * Page layout with main content pane and feature aside content pane side-by-side.
+ * Aside content will typically be hidden or rearranged on mobile layouts.
+ */
+.feature-aside-layout {
+    display: flex;
+    flex-direction: row;
+}
+.feature-aside-layout__content {
+    flex: 0 1 300px;
+    display: flex;
+    flex-direction: column;
+}
+.feature-aside-layout__aside {
+    flex: 1 0 1px;
+    ;
+}
+/* Site navbar. */
+.navbar {
+    width: 100%;
+    background: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    color: var(--primary-text);
+    height: 4rem;
+    align-items: center;
+}
+.navbar-link-list {
+    display: flex;
+    list-style-type: none;
+    padding: 0 1rem;
+    margin: 0;
+}
+.navbar__link {
+    text-decoration: none;
+    padding: 0 1rem;
+    color: var(--primary-text);
+    font-weight: bold;
+}
+.navbar__link:hover {
+    text-decoration: underline;
+}
+/* Emphasised primary action button */
+.button {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    color: var(--primary-text);
+    border-radius: 2px;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+}
+
+.button.button--primary {
+    background-color: var(--accent-color);
+    color: var(--accent-text);
+    background-color: var(--primary-color);
+    transition: background-color 0.25s ease;
+    color: var(--primary-text);
+}
+
+.button.button--primary:hover {
+    background-color: var(--primary-color-var);
+}
+
+.button.button--primary.button--primary--bright {
+    background-color: var(--accent-color);
+    color: var(--accent-text);
+}
+
+.button.button--primary.button--primary--bright:hover {
+    background-color: var(--accent-color-var);
+}
+
+/* Modern input box */
+.modern-input {
+    padding: 0.75rem;
+    border-radius: 2px;
+    border: 1px solid gray;
+    margin: 0;
+}
+
+.modern-textarea {
+    resize: vertical;
+    min-height: 3rem;
+    font-family: inherit;
+}
+
+.modern-textarea--pad-below {
+    margin-bottom: 1rem;
+}
+
+.modern-input--full-width {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.modern-input:focus {
+    box-shadow: 0 0 2px rgba(0,0,0,0.25);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+}
+
+/* Page titles */
+.page-title {
+    font-family: "Roboto Slab";
+    font-weight: bold;
+    color: var(--accent-text);
+}
+/* Section header */
+.section-heading {
+    font-family: "Roboto Slab";
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding-top: 1em;
+    color: var(--accent-text);
+}
+/* Typical image formatting */
+.standard-image {
+    max-width: 100%;
+    margin: 1rem 0;
+    border-radius: 3px;
+}
+
+/* Floating above */
+
+.up--2 {
+    z-index: 2;
+    box-shadow: 0 0 4px rgba(0,0,0,0.5)
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5)
+}
+
+.up--1 {
+    z-index: 1;
+    box-shadow: 0 0 2px rgba(0,0,0,0.5)
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5)
+}
+
+/* Maps */
+
+.map-container--loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    animation: var(--loading-animation);
+}
+.map-container--error::after {
+    content: "Error: Upcoming event data failed to load. :(";
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    padding-top: 3rem;
+}
+
+/* Spacer */
+
+.spacer {
+    flex-grow: 1;
+}
+
+/* Footer */
+
+footer {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #333;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Centered layout */
+
+.centered-content-layout {
+    max-width: 40rem;
+    margin: auto;
+}
+
+/* Vertically laid out form */
+
+.vertical-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.vertical-form label {
+    padding: 1.5rem 0 0.5rem 0;

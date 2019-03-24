@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/cleanup-meetup/cleanup-meetup#readme",
   "devDependencies": {
+    "@types/googlemaps": "^3.30.19",
     "eslint": "^5.15.3",
     "eslint-config-google": "^0.12.0"
   }
