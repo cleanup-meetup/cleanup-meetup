@@ -122,15 +122,25 @@ a:hover {
     border-radius: 2px;
     font-weight: bold;
     text-decoration: none;
+    border: none;
 }
 
 .button.button--primary {
-    background-color: var(--accent-color);
-    color: var(--accent-text);
+    background-color: var(--primary-color);
     transition: background-color 0.25s ease;
+    color: var(--primary-text);
 }
 
 .button.button--primary:hover {
+    background-color: var(--primary-color-var);
+}
+
+.button.button--primary.button--primary--bright {
+    background-color: var(--accent-color);
+    color: var(--accent-text);
+}
+
+.button.button--primary.button--primary--bright:hover {
     background-color: var(--accent-color-var);
 }
 
@@ -141,6 +151,16 @@ a:hover {
     border-radius: 2px;
     border: 1px solid gray;
     margin: 0;
+}
+
+.modern-textarea {
+    resize: vertical;
+    min-height: 3rem;
+    font-family: inherit;
+}
+
+.modern-textarea--pad-below {
+    margin-bottom: 1rem;
 }
 
 .modern-input--full-width {
@@ -243,4 +263,8 @@ footer {
 .vertical-form {
     display: flex;
     flex-direction: column;
+}
+
+.vertical-form label {
+    padding: 1.5rem 0 0.5rem 0;
 }
