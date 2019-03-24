@@ -24,20 +24,23 @@
     <main class="centered-content-layout">
         <h1 class="page-title">Create New Meetup</h1>
         <p>We're excited to clean up the world with you! Fill out this form to host an event.</p>
-        <form action="/action_page.php">
+        <form action="/action_page.php" class="vertical-form">
             <label for="event-name">Event Name</label>
-            <input type="text" placeholder="Enter event name" name="event-name" required>
-            <label for="location">Event Location:
-                <input type="text" placeholder="Enter event location" name="location" required>
-                <label for="event-day">Day of Event:</label>
-                <input type="date" placeholder="MM/DD/YYYY" name="event-day" required>
-                <label for="event-time">Event Time:</label>
-                <input type="time" placeholder="00:00:00" name="event-time" required>
-                <label for="description">Description of Event:</label>
-                <textarea name="description" rows="10" cols="35" required></textarea>
-                <input type="file" name="image" accept="image/*">
-                <p>Thank you for creating an Event with us</p>
-                <button type="submit" class="submitForm">Submit Event</button>
+            <input class="modern-input modern-input--full-width" type="text" placeholder="Enter event name"
+                name="event-name" required>
+            <label for="location">Event Location:</label>
+            <input class="modern-input modern-input--full-width" type="text" placeholder="Enter event location"
+                name="location" required>
+            <label for="event-day">Day of Event:</label>
+            <input class="modern-input modern-input--full-width" type="date" placeholder="MM/DD/YYYY" name="event-day"
+                required>
+            <label for="event-time">Event Time:</label>
+            <input class="modern-input modern-input--full-width" type="time" placeholder="00:00:00" name="event-time"
+                required>
+            <label for="description">Description of Event:</label>
+            <textarea class="modern-input modern-textarea modern-textarea--pad-below" name="description" rows="10" cols="35" required></textarea>
+            <input class="modern-input modern-input--full-width" type="file" name="image" accept="image/*">
+            <button class="button button--primary">Submit Event</button>
         </form>
     </main>
 </body>
