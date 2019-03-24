@@ -22,4 +22,10 @@ class Event(db.Model):
     confirmed_users = db.Column(db.String(1000))
     event_date = db.Column(db.String(20))
     event_creator = db.Column(db.String(128))
-    filelocation = db.Column(db.String(128))
+    fileLocation = db.Column(db.String(128))
+    address = db.Column(db.String(500))
+    description = db.Column(db.String(5000))
+    time = db.Column(db.String(128))
+
+    def __repr__(self):
+        return '<Event {} {} {} {} {} {} {} {} {} {}>'.format(self.name, self.lat, self.lng, self.confirmed_users, self.event_date, self.event_creator, self.fileLocation, self.address, self.description, self.time)

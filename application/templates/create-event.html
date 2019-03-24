@@ -24,12 +24,11 @@
         <p>We're excited to clean up the world with you! Fill out this form to host an event.</p>
         <form action="/upload" method="post" enctype="multipart/form-data" class="vertical-form">
             <label for="EventName">Event Name</label>
-            <input class="modern-input modern-input--full-width" type="text" placeholder="Enter event name name=EventName" required>
+            <input class="modern-input modern-input--full-width" type="text" placeholder="Enter event name" name="EventName" required>
             <label for="EventLocation">Event Location:</label>
-            <input class="modern-input modern-input--full-width" type="text" placeholder="Enter event location"
-                name="EventLocation" required>
-            <label for="EventDay">Day of Event:</label>
-            <input class="modern-input modern-input--full-width" type="date" placeholder="MM/DD/YYYY" name="EventDay" required>
+            <input class="modern-input modern-input--full-width" type="text" placeholder="Enter event location" name="EventLocation" required>
+            <label for="EventDate">Day of Event:</label>
+            <input class="modern-input modern-input--full-width" type="date" placeholder="MM/DD/YYYY" name="EventDate" required>
             <label for="EventTime">Event Time:</label>
             <input class="modern-input modern-input--full-width" type="time" placeholder="00:00:00" name="EventTime" required>
             <label for="EventDescription">Description of Event:</label>
