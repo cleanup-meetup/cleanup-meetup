@@ -2,7 +2,6 @@
 {% block pagename %}Home{% endblock %}
 {% block bodyclass %}{% endblock %}
 {% block main %}
-<div class="ball"></div>
 <main class="centered-content-layout">
     <h1 class="page-title">Create New Meetup</h1>
     <p>We're excited to clean up the world with you! Fill out this form to host an event.</p>
@@ -23,7 +22,7 @@
         <textarea class="modern-input modern-textarea modern-textarea--pad-below" name="EventDescription" rows="10"
             cols="35" required></textarea>
         <input class="modern-input modern-input--full-width" type="file" name="image" accept="image/*">
-        <button class="button button--primary">Submit Event</button>
+        <button class="button button--primary vertical-form__submit-button">✔ Submit Event</button>
     </form>
 </main>
 {% endblock %}

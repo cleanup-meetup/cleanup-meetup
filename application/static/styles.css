@@ -115,18 +115,20 @@ a:hover {
 
 .navbar__link:hover {
     text-decoration: underline;
+    color: var(--primary-text);
 }
 
 /* Emphasised primary action button */
 
 .button {
-    padding: 0.5rem;
+    padding: 0.75rem;
     margin: 0.5rem;
     color: var(--primary-text);
     border-radius: 2px;
     font-weight: bold;
     text-decoration: none;
     border: none;
+    cursor: pointer;
 }
 
 .button.button--primary {
@@ -275,6 +277,42 @@ footer {
 
 .vertical-form label {
     padding: 1.5rem 0 0.5rem 0;
+}
+
+.vertical-form__submit-button {
+    align-self: center;
+    font-family: inherit;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+/* Color wash image */
+.image-wash {
+    background: rgba(0,0,50,0.3);
+}
+
+.image-wash__background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+}
+
+.image-wash__content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-text);
+}
+
+/* Events */
+.event-title {
+    color: var(--primary-text);
 }
 
 /* Layout for about_us file */
