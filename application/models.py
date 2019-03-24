@@ -23,3 +23,4 @@ class Event(db.Model):
     event_date = db.Column(db.String(20))
     event_creator = db.Column(db.String(128))
     filelocation = db.Column(db.String(128))
+    agreed = db.Column(db.Integer)
