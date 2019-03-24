@@ -1,22 +1,15 @@
 from flask import render_template, flash, redirect, url_for, request, send_file, make_response, session
-from application import app, bootstrap, db, twitter
+from application import app, bootstrap, db
 import geocoder
 import json
 from application.models import User, Event
 from werkzeug.utils import secure_filename
 import os
 from geopy.geocoders import Nominatim
-from flask_oauth import OAuth
 from sqlalchemy.orm import scoped_session, sessionmaker
 
 
 UPLOAD_FOLDER = 'IMAGES/'
-
-@twitter.tokengetter
-def get_twitter_token(token=None):
-    return session.get('twitter_token')
-
-
 
 @app.route('/')
 @app.route('/home', methods=['GET', 'POST'])
@@ -86,10 +79,6 @@ def upload():
 
 @app.route('/create-event', methods=['GET', 'POST'])
 def create_event():
-    access_token = session.get('access_token')
-    if access_token is None:
-        return redirect(url_for('login'))
-    access_token = access_token[0]
     return render_template('create-event.html')
 
 #This function will return a jsonable
@@ -115,33 +104,6 @@ def make_json_struct():
         event_list.append(struct)
     print(event_list)
     return event_list
-
-@app.route('/login')
-def login():
-    return twitter.authorize(callback=url_for('oauth_authorized',
-    next=request.args.get('next') or request.referrer or None))
-
-@app.route('/logout')
-def logout():
-    session.pop('screen_name', None)
-    flash('You were signed out')
-    return redirect(request.referrer or url_for('index'))
-
-@app.route('/oauth-authorized')
-@twitter.authorized_handler
-def oauth_authorized(resp):
-    next_url = request.args.get('next') or url_for('index')
-    if resp is None:
-        flash(u'You denied the request to sign in.')
-        return redirect(next_url)
-    access_token = resp['oauth_token']
-    session['access_token'] = access_token
-    session['screen_name'] = resp['screen_name']
-    session['twitter_token'] = (
-        resp['oauth_token'],
-        resp['oauth_token_secret']
-    )
-    return redirect(url_for('create_event'))
 
 #very experimental
 @app.route('/future_events_sample.json')

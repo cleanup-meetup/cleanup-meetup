@@ -13,11 +13,13 @@ future==0.17.1
 geocoder==1.38.1
 geographiclib==1.49
 geopy==1.18.1
+httplib2==0.12.1
 idna==2.8
 itsdangerous==1.1.0
 Jinja2==2.10
 Mako==1.0.8
 MarkupSafe==1.1.1
+oauth2==1.9.0.post1
 python-dateutil==2.8.0
 python-editor==1.0.4
 ratelim==0.1.6
