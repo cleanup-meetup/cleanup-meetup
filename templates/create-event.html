@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" type="text/css" href="styles\styles.css">
+    <link rel="stylesheet" type="text/css" href="styles\form.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cleanup Meetup - Create Event</title>
 </head>
+
 <body>
     <div class="ball"></div>
     <nav class="navbar up--2">
@@ -25,17 +28,18 @@
             <label for="event-name">Event Name</label>
             <input type="text" placeholder="Enter event name" name="event-name" required>
             <label for="location">Event Location:
-            <input type="text" placeholder="Enter event location" name="location" required>
-            <label for="event-day">Day of Event:</label>
-            <input type="date" placeholder="MM/DD/YYYY" name="event-day" required>
-            <label for="event-time">Event Time:</label>
-            <input type="time" placeholder="00:00:00" name="event-time" required>
-            <label for="description">Description of Event:</label>
-            <textarea name="description" rows="10" cols="35" required></textarea>
-            <input type="file" name="image" accept="image/*">
-            <p>Thank you for creating an Event with us</p>
-            <button type="submit" class="submitForm">Submit Event</button>
+                <input type="text" placeholder="Enter event location" name="location" required>
+                <label for="event-day">Day of Event:</label>
+                <input type="date" placeholder="MM/DD/YYYY" name="event-day" required>
+                <label for="event-time">Event Time:</label>
+                <input type="time" placeholder="00:00:00" name="event-time" required>
+                <label for="description">Description of Event:</label>
+                <textarea name="description" rows="10" cols="35" required></textarea>
+                <input type="file" name="image" accept="image/*">
+                <p>Thank you for creating an Event with us</p>
+                <button type="submit" class="submitForm">Submit Event</button>
         </form>
     </main>
 </body>
+
 </html>
