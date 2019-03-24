@@ -8,9 +8,8 @@ const FUTURE_EVENTS_ENDPOINT /** @type {string} */
     = 'future_events_sample.json';
 const MAPS_KEY = 'AIzaSyBtrkN2c8rrSWUdy6-SKqp8stjYBVb3by8';
 
-
-const MAP_ID = 'events-map';
 const SEARCH_BOX_ID = 'events-map-search-box';
+const RESULTS_CONTAINER_ID = 'search-results-container';
 
 /**
  * @typedef {Object} CleanupEvent An upcoming event returned by the API.
@@ -51,7 +50,12 @@ function initMaps() {
     populateMap(searchMap).then(markers => {
         if (searchBox && futureEventMapsContainers[0]) {
             searchBox.addEventListener('change', inputBox => {
-                handleSearchInput(inputBox.target.value, searchMap, filterCircle, markers);
+                handleSearchInput(inputBox.target.value, searchMap, filterCircle, markers)
+                    .then(resultsFromMarkers).then(resultsList => {
+                        const resultsListContainer = document.getElementById(RESULTS_CONTAINER_ID);
+                        resultsListContainer.innerHTML = '';
+                        resultsListContainer.appendChild(resultsList);
+                    });
             });
         }
     });
@@ -143,6 +147,8 @@ function eventsToMarkers(events, map) {
             map: map
         });
 
+        marker.eventTime = `${event.date} at ${event.time}`;
+
         marker.addListener('click', marker => {
             window.location.href = `view-event?eventID=${event.EventID}`;
         });
@@ -197,23 +203,29 @@ function geoCodeAddress(potentialAddress) {
  * @param {google.maps.Map} map The map to filter.
  * @param {google.maps.Circle} circle The circle to draw.
  * @param {google.maps.Marker[]} markers The markers to filter.
+ * @return {Promise}
  */
 function handleSearchInput(input, map, circle, markers) {
-    geoCodeAddress(input).then(result => {
-        // Technically should work even though it has an extra field
-        circle.setCenter({ lat: result.lat, lng: result.lng });
-        circle.setMap(map);
-        map.fitBounds(circle.getBounds());
-        map.setZoom(map.zoom - 1);
-        markers.forEach(marker => {
-            if (!isInCircle(marker, circle)) {
-                marker.setOpacity(0.3);
-            }
+    return new Promise((res, rej) => {
+        geoCodeAddress(input).then(result => {
+            const shownMarkers = [];
+            // Technically should work even though it has an extra field
+            circle.setCenter({ lat: result.lat, lng: result.lng });
+            circle.setMap(map);
+            map.fitBounds(circle.getBounds());
+            map.setZoom(map.zoom - 1);
+            markers.forEach(marker => {
+                if (!isInCircle(marker, circle)) {
+                    marker.setOpacity(0.3);
+                    shownMarkers.push(marker);
+                }
+            });
+            res(shownMarkers);
+        }).catch(err => {
+            circle.setMap(null);
+            markers.forEach(marker => marker.setOpacity(1));
+            rej(err);
         });
-    }).catch(err => {
-        circle.setMap(null);
-        markers.forEach(marker => marker.setOpacity(1));
-        console.trace(err);
     });
 }
 
@@ -225,4 +237,26 @@ function handleSearchInput(input, map, circle, markers) {
  */
 function isInCircle(marker, circle) {
     return google.maps.geometry.spherical.computeDistanceBetween(marker.getPosition(), circle.getCenter()) <= circle.getRadius();
+}
+
+/**
+ * Build results list from markers.
+ * @param {google.maps.Marker[]} markers
+ * @return {HTMLElement}
+ */
+function resultsFromMarkers(markers) {
+    const container = document.createElement('div');
+    container.classList.add('filter-list');
+    markers.forEach(marker => {
+        const listItem = document.createElement('div');
+        listItem.classList.add('filter-list__item');
+        const itemHeading = document.createElement('h3');
+        itemHeading.classList.add('section-heading');
+        const itemTime = document.createElement('span');
+        itemTime.innerText = marker.eventTime;
+        itemTime.classList.add('bold');
+
+        container.appendChild(listItem);
+    });
+    return container;
 }
