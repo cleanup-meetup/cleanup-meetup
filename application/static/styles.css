@@ -42,7 +42,7 @@ a:hover {
         opacity: 1;
     }
     to {
-        opacity: 0.5;
+        opacity: 0.2;
     }
 }
 
@@ -390,4 +390,24 @@ footer {
     font-size: 1rem;
     text-align: center;
     color: var(--primary-text);
+}
+
+.error-message {
+    color: darkred;
+    font-weight: bold;
+    padding: 3rem 0;
+    text-align: center;
+    display: block;
+}
+
+/* Results list */
+.filter-list {
+    overflow-y: scroll;
+    padding: 1rem;
+}
+
+.filter-list__item {
+    border: 1px solid lightgray;
+    border-radius: 2px;
+
 }

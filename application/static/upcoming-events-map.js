@@ -44,7 +44,7 @@ function initMaps() {
         strokeWeight: 2,
         fillColor: '#006747',
         fillOpacity: 0.1,
-        radius: 8000
+        radius: 80000
     });
 
     populateMap(searchMap).then(markers => {
@@ -52,6 +52,7 @@ function initMaps() {
             searchBox.addEventListener('change', inputBox => {
                 handleSearchInput(inputBox.target.value, searchMap, filterCircle, markers)
                     .then(resultsFromMarkers).then(resultsList => {
+                        console.log(resultsList);
                         const resultsListContainer = document.getElementById(RESULTS_CONTAINER_ID);
                         resultsListContainer.innerHTML = '';
                         resultsListContainer.appendChild(resultsList);
@@ -147,7 +148,7 @@ function eventsToMarkers(events, map) {
             map: map
         });
 
-        marker.eventTime = `${event.date} at ${event.time}`;
+        marker.eventTime = `${event.date | 'soon'} at ${event.time | 'some time'}`;
 
         marker.addListener('click', marker => {
             window.location.href = `view-event?eventID=${event.EventID}`;
@@ -217,6 +218,8 @@ function handleSearchInput(input, map, circle, markers) {
             markers.forEach(marker => {
                 if (!isInCircle(marker, circle)) {
                     marker.setOpacity(0.3);
+                } else {
+                    marker.setOpacity(1);
                     shownMarkers.push(marker);
                 }
             });
@@ -224,7 +227,6 @@ function handleSearchInput(input, map, circle, markers) {
         }).catch(err => {
             circle.setMap(null);
             markers.forEach(marker => marker.setOpacity(1));
-            rej(err);
         });
     });
 }
@@ -246,16 +248,29 @@ function isInCircle(marker, circle) {
  */
 function resultsFromMarkers(markers) {
     const container = document.createElement('div');
+    if (markers.length === 0) {
+        const errorTextHolder = document.createElement('span');
+        const errorText = document.createTextNode('No results found.');
+        errorTextHolder.appendChild(errorText);
+        errorTextHolder.classList.add('error-message');
+        container.append(errorTextHolder);
+        return container;
+    }
     container.classList.add('filter-list');
     markers.forEach(marker => {
         const listItem = document.createElement('div');
         listItem.classList.add('filter-list__item');
+        listItem.classList.add('up--1');
         const itemHeading = document.createElement('h3');
         itemHeading.classList.add('section-heading');
+        const itemName = document.createTextNode(marker.getTitle());
+        itemHeading.appendChild(itemName);
         const itemTime = document.createElement('span');
-        itemTime.innerText = marker.eventTime;
+        const timeText = document.createTextNode(marker.eventTime);
+        itemTime.appendChild(timeText);
         itemTime.classList.add('bold');
-
+        listItem.appendChild(itemHeading);
+        listItem.appendChild(itemTime);
         container.appendChild(listItem);
     });
     return container;
