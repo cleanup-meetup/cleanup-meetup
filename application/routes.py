@@ -68,7 +68,7 @@ def upload():
     userID = "UserID1"
     e = Event(name = EventNameFile, lat = locLat, lng = locLng, confirmed_users = userID, event_date = EventDateFile, event_creator = userID, fileLocation = file.filename, address = EventLocationFile, description = EventDescriptionFile, time = EventTimeFile)
     db.session.add(e)
-    db.commit()
+    db.session.commit()
     return render_template('index.html')
 
 @app.route('/create-event', methods=['GET', 'POST'])
