@@ -286,3 +286,16 @@ footer {
 .about-titles {
     text-align: center;
 }
+
+.container-form{
+    text-align: center;
+}
+.logo{
+    height: 500px;
+    width: 500px;
+    background-image: url(/trashLogo.png);
+}
+.flexUs{
+    display:flexbox;
+    flex-direction: row-reverse;
+}
