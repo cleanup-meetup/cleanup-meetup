@@ -9,7 +9,7 @@
         "Lat": 77,
         "Lng": 35,
         "EventName": "USF funeral",
-        "EventID": 1
+        "EventID": 51
         },
         {
         "Lat": 85,
@@ -154,8 +154,181 @@
         "Lng": 42,
         "EventName": "The Land before time",
         "EventID": 49
+        },
+
+        {
+            "Lat":33,
+            "Lng":116,
+            "EventName":"Litter clean up",
+            "EventID": 2
+        },
+     
+        {
+            "Lat":44,
+            "Lng":103,
+            "EventName":"Tons of trash",
+            "EventID":4
+        },
+     
+        {
+            "Lat":34,
+            "Lng":99,
+            "EventName":"Garbaage clean up",
+            "EventID":6
+        },
+     
+        {
+            "Lat":45,
+            "Lng":112,
+            "EventName":"Litter for days",
+            "EventID":8
+        },
+     
+        {
+            "Lat":34,
+            "Lng":97,
+            "EventName":"Downtown cleanup!",
+            "EventID":10
+        },
+     
+        {
+            "Lat":35,
+            "Lng":86,
+            "EventName":"Garbage needs taken care of",
+            "EventID":12
+        },
+     
+        {
+            "Lat":33,
+            "Lng":86,
+            "EventName":"Garbage day in downtown!",
+            "EventID":14
+        },
+     
+        {
+            "Lat":45,
+            "Lng":102,
+            "EventName":"Trashy trash that needs trashed",
+            "EventID":16
+        },
+     
+        {
+            "Lat":42,
+            "Lng":99,
+            "EventName":"University clean up",
+            "EventID":18
+        },
+     
+        {
+            "Lat":43,
+            "Lng":93,
+            "EventName":"River cleaning",
+            "EventID":20
+        },
+     
+        {
+            "Lat":40,
+            "Lng":90,
+            "EventName":"Garbage everywhere",
+            "EventID":22
+        },
+     
+        {
+            "Lat":36,
+            "Lng":101,
+            "EventName":"Tons of trash",
+            "EventID":24
+        },
+     
+        {
+            "Lat":36,
+            "Lng":85,
+            "EventName":"Area needs cleaned",
+            "EventID":26
+        },
+     
+        {
+            "Lat":35,
+            "Lng":94,
+            "EventName":"Clean the lake",
+            "EventID":28
+        },
+     
+        {
+            "Lat":43,
+            "Lng":112,
+            "EventName":"Side of road clean up",
+            "EventID":30
+        },
+     
+        {
+            "Lat":42,
+            "Lng":116,
+            "EventName":"Litter cleaners",
+            "EventID":32
+        },
+     
+        {
+            "Lat":34,
+            "Lng":98,
+            "EventName":"Trashtag time!",
+            "EventID":34
+        },
+     
+        {
+            "Lat":38,
+            "Lng":117,
+            "EventName":"City clean up",
+            "EventID":36
+        },
+     
+        {
+            "Lat":43,
+            "Lng":107,
+            "EventName":"Tons of garbage",
+            "EventID":38
+        },
+     
+        {
+            "Lat":42,
+            "Lng":99,
+            "EventName":"Trashy trash",
+            "EventID":40
+        },
+     
+        {
+            "Lat":34,
+            "Lng":96,
+            "EventName":"Too much litter!",
+            "EventID":42
+        },
+     
+        {
+            "Lat":36,
+            "Lng":102,
+            "EventName":"Local clean up",
+            "EventID":44
+        },
+     
+        {
+            "Lat":37,
+            "Lng":118,
+            "EventName":"Garbage time!",
+            "EventID":46
+        },
+     
+        {
+            "Lat":38,
+            "Lng":118,
+            "EventName":"Too much trash!",
+            "EventID":48
+        },
+     
+        {
+            "Lat":37,
+            "Lng":89,
+            "EventName":"Litter for days",
+            "EventID":50
         }
-
-
 
 ]
