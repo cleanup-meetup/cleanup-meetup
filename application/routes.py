@@ -62,12 +62,13 @@ def upload():
     geolocator = Nominatim(user_agent="cleanup-meetup")
     location = geolocator.geocode(EventLocationFile)
     print((location.latitude, location.longitude))
-
+    locLat = truncate(location.latitude)
+    locLng = truncate(location.longitude)
     #FOR DEMOING PURPOSES!!!!!!!!
     userID = "UserID1"
-    e = Event(name = EventNameFile, lat = location.latitude, lng = location.longitude, confirmed_users = userID, event_date = EventDateFile, event_creator = userID, fileLocation = file.filename, address = EventLocationFile, description = EventDescriptionFile, time = EventTimeFile)
+    e = Event(name = EventNameFile, lat = locLat, lng = locLng, confirmed_users = userID, event_date = EventDateFile, event_creator = userID, fileLocation = file.filename, address = EventLocationFile, description = EventDescriptionFile, time = EventTimeFile)
     db.session.add(e)
-    db.commit()
+    db.session.commit()
     return render_template('index.html')
 
 @app.route('/create-event', methods=['GET', 'POST'])
@@ -103,3 +104,6 @@ def make_json_struct():
 def future_events_sample():
     return render_template('future_events_sample.json')
 
+def truncate(n, decimals=0):
+    multiplier = 10 ** decimals
+    return int(n * multiplier) / multiplier
