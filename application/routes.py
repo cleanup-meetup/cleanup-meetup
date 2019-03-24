@@ -77,6 +77,14 @@ def upload():
     db.session.commit()
     return render_template('index.html')
 
+@app.route('/about', methods=['GET', 'POST'])
+def about():
+    return render_template('about.html')
+
+@app.route('/view-event', methods=['GET', 'POST'])
+def view_event():
+    return render_template('view-event.html')
+
 @app.route('/create-event', methods=['GET', 'POST'])
 def create_event():
     return render_template('create-event.html')
