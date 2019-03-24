@@ -1,18 +1,7 @@
 {% extends 'base.html' %}
 {% block pagename %}Home{% endblock %}
-{% block body %}
-
-<body class="no-scroll-layout">
-    <nav class="navbar">
-        <a href="index.html" class="navbar__link"><img src="logo.png" alt="Cleanup Meetup Logo"></a>
-        <ul class="navbar-link-list">
-            <li class="navbar-link-list__list-item"><a class="navbar__link" href="about.html">About</a></li>
-            <li class="navbar-link-list__list-item"><a class="navbar__link" href="contact.html">Contact</a></li>
-            <li class="navbar-link-list__list-item"><a class="button button--primary  button--primary--bright"
-                    href="{{ url_for('create_event')  }}">Create
-                    Event</a></li>
-        </ul>
-    </nav>
+{% block bodyclass %}no-scroll-layout{% endblock %}
+{% block main %}
     <main class="feature-aside-layout no-scroll-layout__content">
         <section class="feature-aside-layout__content main-content up--1">
             <header>
@@ -37,6 +26,4 @@
             <span>Loading map...</span>
         </section>
     </main>
-</body>
-
 {% endblock %}
