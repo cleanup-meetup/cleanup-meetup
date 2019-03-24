@@ -59,11 +59,15 @@ def upload():
     print(EventTimeFile)
     print(EventLocationFile)
     print(EventDescriptionFile)
-    geolocator = Nominatim(user_agent="cleanup-meetup")
-    location = geolocator.geocode(EventLocationFile)
-    print((location.latitude, location.longitude))
-    locLat = truncate(location.latitude)
-    locLng = truncate(location.longitude)
+    try:
+        geolocator = Nominatim(user_agent="cleanup-meetup")
+        location = geolocator.geocode(EventLocationFile)
+        print((location.latitude, location.longitude))
+        locLat = truncate(location.latitude)
+        locLng = truncate(location.longitude)
+    except:
+        flash ("Please enter a valid address!")
+        return render_template('index.html')
     #FOR DEMOING PURPOSES!!!!!!!!
     userID = "UserID1"
     e = Event(name = EventNameFile, lat = locLat, lng = locLng, confirmed_users = userID, event_date = EventDateFile, event_creator = userID, fileLocation = file.filename, address = EventLocationFile, description = EventDescriptionFile, time = EventTimeFile)
