@@ -279,6 +279,7 @@ footer {
 .centered-content-layout {
     max-width: 40rem;
     margin: auto;
+    padding: 0 1rem;
 }
 
 .centered-content-layout--wide {
@@ -333,10 +334,10 @@ footer {
     flex-direction: column;
     height: 100%;
     width: 100%;
-    margin: 0;
     align-items: center;
     justify-content: center;
     color: var(--primary-text);
+    margin: 0 1rem;
 }
 
 /* Events */
@@ -416,4 +417,35 @@ footer {
 .filter-list__item .section-heading {
     margin-top: 0;
     padding-top: 0;
+}
+
+/** Breakpoints **/
+
+@media only screen and (max-width:50rem) { 
+	.feature-aside-layout {
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .feature-aside-layout__content {
+        background: rgba(255,255,255,0.9);
+        height: 100%;
+    }
+
+    .feature-aside-layout__aside {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+}
+
+@media only screen and (max-width:30rem) { 
+    .float-aside {
+        float: none;
+        width: 100%;
+        margin: 1rem 0;
+    }
 }

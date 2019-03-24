@@ -51,7 +51,7 @@ function initMaps() {
 
         populateMap(searchMap).then(markers => {
             if (searchBox && futureEventMapsContainers[0]) {
-                searchBox.addEventListener('keyup', inputBox => {
+                searchBox.addEventListener('change', inputBox => {
                     handleSearchInput(inputBox.target.value, searchMap, filterCircle, markers)
                         .then(resultsFromMarkers).then(resultsList => {
                             console.log(resultsList);
