@@ -29,6 +29,6 @@ class Event(db.Model):
     time = db.Column(db.String(128))
 
     def __repr__(self):
-        return '<Event {} {} {} {} {} {} {} {} {}>'.format(self.name, self.lat, self.lng, self.confirmed_users,
+        return '<Event {} {} {} {} {} {} {} {} {} {}>'.format(self.name, self.lat, self.lng, self.confirmed_users,
                                                            self.event_date, self.event_creator, self.fileLocation,
-                                                           self.address, self.description, self.time)
+                                                           self.address, self.description, self.time, self.agreed)

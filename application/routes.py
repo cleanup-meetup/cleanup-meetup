@@ -75,7 +75,7 @@ def upload():
         return render_template('index.html')
     #FOR DEMOING PURPOSES!!!!!!!!
     userID = "UserID1"
-    e = Event(name = EventNameFile, lat = locLat, lng = locLng, confirmed_users = userID, event_date = EventDateFile, event_creator = userID, fileLocation = file.filename, address = EventLocationFile, description = EventDescriptionFile, time = EventTimeFile)
+    e = Event(name = EventNameFile, lat = locLat, lng = locLng, confirmed_users = userID, event_date = EventDateFile, event_creator = userID, fileLocation = file.filename, address = EventLocationFile, description = EventDescriptionFile, time = EventTimeFile, agreed = 1)
     db.session.add(e)
     db.session.commit()
     return render_template('index.html')
@@ -140,6 +140,15 @@ def viewEvent(view_id):
         db.session.commit()
         return redirect(url_for('home'))
     return render_template('view-event.html', e = event)
+
+@app.route('/viewResponse', methods=['POST'])
+def viewResponse():
+    event = Event.query.filter_by(id=view_id).first()
+    current_agreed = event.agreed
+    current_agreed = event.agreed + 1
+    event.agreed = current_agreed
+    db.session.commit()
+    return redirect(url_for('home'))
 
 #very experimental
 @app.route('/future_events_sample.json')
