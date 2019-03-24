@@ -2,7 +2,11 @@
   display: block;
   width: 100px;
   height: 100px;
-  background-image:url(/trashLogo.png);
+  background: red;
+  border-radius: 50%;
+  background: -webkit-radial-gradient(25px 25px, circle, red, #000);
+  background: -moz-radial-gradient(25px 25px, circle, red, #000);
+  background: radial-gradient(25px 25px, circle, red, #000);
   -webkit-animation: spin 1000ms linear infiite, moveDowntoUp 5s linear infinite;
   -moz-animation: spin 1000ms linear infinite, moveDowntoUp 5s linear infinite;
   -ms-animation: spin 1000ms linear infinite, moveDowntoUp 5s linear infinite;
