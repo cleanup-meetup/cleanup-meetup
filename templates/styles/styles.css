@@ -32,11 +32,11 @@ a:hover {
 }
 
 /* Loading animation */
+
 @keyframes throb {
     from {
         opacity: 1;
     }
-
     to {
         opacity: 0.5;
     }
@@ -122,15 +122,25 @@ a:hover {
     border-radius: 2px;
     font-weight: bold;
     text-decoration: none;
+    border: none;
 }
 
 .button.button--primary {
-    background-color: var(--accent-color);
-    color: var(--accent-text);
+    background-color: var(--primary-color);
     transition: background-color 0.25s ease;
+    color: var(--primary-text);
 }
 
 .button.button--primary:hover {
+    background-color: var(--primary-color-var);
+}
+
+.button.button--primary.button--primary--bright {
+    background-color: var(--accent-color);
+    color: var(--accent-text);
+}
+
+.button.button--primary.button--primary--bright:hover {
     background-color: var(--accent-color-var);
 }
 
@@ -143,13 +153,23 @@ a:hover {
     margin: 0;
 }
 
+.modern-textarea {
+    resize: vertical;
+    min-height: 3rem;
+    font-family: inherit;
+}
+
+.modern-textarea--pad-below {
+    margin-bottom: 1rem;
+}
+
 .modern-input--full-width {
     width: 100%;
     box-sizing: border-box;
 }
 
 .modern-input:focus {
-    box-shadow: 0 0 2px rgba(0,0,0,0.25);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
 }
 
 /* Page titles */
@@ -179,17 +199,19 @@ a:hover {
 }
 
 /* Floating above */
+
 .up--2 {
     z-index: 2;
-    box-shadow: 0 0 4px rgba(0,0,0,0.5)
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5)
 }
 
 .up--1 {
     z-index: 1;
-    box-shadow: 0 0 2px rgba(0,0,0,0.5)
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5)
 }
 
 /* Maps */
+
 .map-container--loading {
     display: flex;
     justify-content: center;
@@ -201,7 +223,7 @@ a:hover {
 .map-container--error::after {
     content: "Error: Upcoming event data failed to load. :(";
     position: absolute;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     top: 0;
     bottom: 0;
     left: 0;
@@ -214,15 +236,35 @@ a:hover {
 }
 
 /* Spacer */
+
 .spacer {
     flex-grow: 1;
 }
 
 /* Footer */
+
 footer {
     font-size: 0.9rem;
     font-style: italic;
     color: #333;
     text-align: center;
     font-weight: bold;
+}
+
+/* Centered layout */
+
+.centered-content-layout {
+    max-width: 40rem;
+    margin: auto;
+}
+
+/* Vertically laid out form */
+
+.vertical-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.vertical-form label {
+    padding: 1.5rem 0 0.5rem 0;
 }

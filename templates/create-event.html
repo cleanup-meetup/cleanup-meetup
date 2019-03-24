@@ -1,47 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <link rel="stylesheet" type="text/css" href="styles\styles.css">
     <link rel="stylesheet" type="text/css" href="styles\form.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cleanup Meetup - Create Event</title>
 </head>
+
 <body>
-    <form action="/action_page.php">
-        <div class="container">
-            <h1>Event Creation</h1>
-            <p>Please fill out this form to create an event</p>
-            <hr>
-
-            <label for="event"><b>Event Name</b></label><br>
-            <input type="text" placeholder="Enter event name" name="event" required>
-            <br>
-
-
-            <label for="location"><b>Event Location:</b>
-            <input type="text" placeholder="Enter event location" name="location" required>
-            <br>
-            
-            <label for="eventDay"><b>Day of Event:</b></label><br>
-            <input type="date" placeholder="MM/DD/YYYY" name="eventDay" required>
-            <br>
-
-            <label for="eventTime"><b>Event Time:</b></label><br>
-            <input type="time" placeholder="00:00:00" name="eventTime" required>
-            <br>
-
-            <label for="description"><b>Description of Event:</b></label><br>
-            <textarea name="description" rows="10" cols="35" required></textarea>
-            <br>
-
-            <input type="file" name="pic" accept="image/*"><br><br>
-        
-            <hr>
-            <p>Thank you for creating an Event with us</p>
-            <button type="submit" class="submitForm">Submit Event</button>
-        </div>
-
-      </form>
+    <div class="ball"></div>
+    <nav class="navbar up--2">
+        <a href="index.html" class="navbar__link"><img src="logo.png" alt="Cleanup Meetup Logo"></a>
+        <ul class="navbar-link-list">
+            <li class="navbar-link-list__list-item"><a class="navbar__link" href="about.html">About</a></li>
+            <li class="navbar-link-list__list-item"><a class="navbar__link" href="contact.html">Contact</a></li>
+            <li class="navbar-link-list__list-item"><a class="button button--primary" href="create-event.html">Create
+                    Event</a></li>
+        </ul>
+    </nav>
+    <main class="centered-content-layout">
+        <h1 class="page-title">Create New Meetup</h1>
+        <p>We're excited to clean up the world with you! Fill out this form to host an event.</p>
+        <form action="/action_page.php" class="vertical-form">
+            <label for="event-name">Event Name</label>
+            <input class="modern-input modern-input--full-width" type="text" placeholder="Enter event name"
+                name="event-name" required>
+            <label for="location">Event Location:</label>
+            <input class="modern-input modern-input--full-width" type="text" placeholder="Enter event location"
+                name="location" required>
+            <label for="event-day">Day of Event:</label>
+            <input class="modern-input modern-input--full-width" type="date" placeholder="MM/DD/YYYY" name="event-day"
+                required>
+            <label for="event-time">Event Time:</label>
+            <input class="modern-input modern-input--full-width" type="time" placeholder="00:00:00" name="event-time"
+                required>
+            <label for="description">Description of Event:</label>
+            <textarea class="modern-input modern-textarea modern-textarea--pad-below" name="description" rows="10" cols="35" required></textarea>
+            <input class="modern-input modern-input--full-width" type="file" name="image" accept="image/*">
+            <button class="button button--primary">Submit Event</button>
+        </form>
+    </main>
 </body>
+
 </html>
