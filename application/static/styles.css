@@ -110,11 +110,20 @@ a:hover {
     padding: 0 1rem;
     color: var(--primary-text);
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    font-family: Roboto Slab;
+    s
 }
 
 .navbar__link:hover {
     text-decoration: underline;
     color: var(--primary-text);
+}
+
+.navbar__logo {
+    max-height: 4rem;
+    max-width: 100%;
 }
 
 /* Emphasised primary action button */
