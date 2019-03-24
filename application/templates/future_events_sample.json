@@ -8,429 +8,216 @@
         "EventID": 1
     },
     {
-        "Lat": 77,
-        "Lng": 35,
-        "EventName": "USF funeral",
-        "Date": "03/24/2019",
-        "Time": "12:00:pm",
-        "EventID": 51
-        },
-        {
-        "Lat": 85,
-        "Lng": 41,
-        "EventName": "Clearwater Beach:", 
-        "Date": "03/24/2019",
-        "Time": "12:00:pm",
-        "EventID": 3
-        },
-        {
-        "Lat": 99,
-        "Lng": 30,
-        "EventName": "My House",
-        "Date": "03/24/2019",
-        "Time": "12:00:pm",
-        "EventID": 5
-        },
-        {
-        "Lat": 105,
-        "Lng": 35,
-        "EventName": "The temple",
-        "Date": "03/24/2019",
-        "Time": "12:00:pm",
-        "EventID": 7
-        },
-        {
-        "Lat": 103,
-        "Lng": 34,
-        "EventName": "Paraliment",
-        "Date": "03/24/2019",
-        "Time": "12:00:pm",
-        "EventID": 9
-        },
-        {
-        "Lat": 114,
-        "Lng": 47,
-        "EventName": "Congress",
-        "Date": "03/24/2019",
-        "Time": "12:00:pm",
-        "EventID": 11
-        },
-        {
-        "Lat": 111,
-        "Lng": 48,
-        "EventName": "The White House",
-        "Date": "03/24/2019",
-        "Time": "12:00:pm",
-        "EventID": 13
-        },
-        {
-        "Lat": 70,
-        "Lng": 48,
-        "EventName": "THe clest to Narnia",
-        "Date": "03/24/2019",
-        "Time": "12:00:pm",
-        "EventID": 15
-        },
-        {
-        "Lat": 96,
-        "Lng": 45,
-        "EventName": "Highway 290",
-        "Date": "03/24/2019",
-        "Time": "12:00:pm",
-        "EventID": 17
-        },
-        {
-        "Lat": 86,
-        "Lng": 42,
-        "EventName": "Clearwater Highschool",
-        "Date": "03/24/2019",
-        "Time": "12:00:pm",
-        "EventID": 19
-        },
-        {
-        "Lat": 104,
-        "Lng": 38,
-        "EventName": "Countryside Highschool",
-        "Date": "03/24/2019",
-        "Time": "12:00:pm",
-        "EventID": 21
-        },
-        {
-        "Lat": 96,
-        "Lng": 30,
-        "EventName": "Mount Rushmore",
-        "Date": "03/24/2019",
-        "Time": "12:00:pm",
-        "EventID": 23
-        },
-        {
-        "Lat": 76,
-        "Lng": 37,
+        "Lat":34,
+        "Lng":-86,
         "EventName": "Hidden leaf village",
-        "Date": "03/24/2019",
-        "Time": "12:00:pm",
-        "EventID": 25
+        "EventID":1,
+        "Time":"12:00 PM",
+        "Date":"03/25/2019"
         },
         {
-        "Lat": 84,
-        "Lng": 45,
-        "EventName": "Hidden mist village",
-        "Date": "03/24/2019",
-        "Time": "12:00:pm",
-        "EventID": 27
+        "Lat":35,
+        "Lng":-85,
+        "EventName": "country side park",
+        "EventID":2,
+        "Time":"12:00 PM",
+        "Date":"03/25/2019"
         },
         {
-        "Lat": 115,
-        "Lng": 45,
-        "EventName": "Akzaban",
-        "Date": "03/24/2019",
-        "Time": "12:00:pm",
-        "EventID": 29
+        "Lat":34,
+        "Lng":-85,
+        "EventName": "Not seaworld",
+        "EventID":3,
+        "Time":"12:00 PM",
+        "Date":"03/25/2019"
         },
         {
-        "Lat": 86,
-        "Lng": 49,
-        "EventName": "USF Library",
-        "Date": "03/24/2019",
-        "Time": "12:00:pm",
-        "EventID": 31
+        "Lat":36,
+        "Lng":-82,
+        "EventName": "the land before time",
+        "EventID":4,
+        "Time":"12:00 PM",
+        "Date":"03/25/2019"
         },
         {
-        "Lat": 84,
-        "Lng": 43,
-        "EventName": "Winterfell",
-        "Date": "03/24/2019",
-        "Time": "12:00:pm",
-        "EventID": 33
+        "Lat":34,
+        "Lng":-81,
+        "EventName": "The entrance to narnia",
+        "EventID":5,
+        "Time":"12:00 PM",
+        "Date":"03/25/2019"
         },
         {
-        "Lat": 75,
-        "Lng": 39,
-        "EventName": "Las Vegas Casinos",
-        "Date": "03/24/2019",
-        "Time": "12:00:pm",
-        "EventID": 35
+        "Lat":35,
+        "Lng":-87,
+        "EventName": "My house",
+        "EventID":6,
+        "Time":"12:00 PM",
+        "Date":"03/25/2019"
         },
         {
-        "Lat": 110,
-        "Lng": 45,
-        "EventName": "Fight club",
-        "Date": "03/24/2019",
-        "Time": "12:00:pm",
-        "EventID": 37
+        "Lat":39,
+        "Lng":-89,
+        "EventName": "USF Graveyard",
+        "EventID":7,
+        "Time":"12:00 PM",
+        "Date":"03/25/2019"
         },
         {
-        "Lat": 117,
-        "Lng": 32,
-        "EventName": "The lake by USF",
-        "Date": "03/24/2019",
-        "Time": "12:00:pm",
-        "EventID": 39
+        "Lat":39,
+        "Lng":-86,
+        "EventName": "Hidden Mist Village",
+        "EventID":8,
+        "Time":"12:00 PM",
+        "Date":"03/25/2019"
         },
         {
-        "Lat": 119,
-        "Lng": 37,
-        "EventName": "Sugarland",
-        "Date": "03/24/2019",
-        "Time": "12:00:pm",
-        "EventID": 41
+        "Lat":36,
+        "Lng":-86,
+        "EventName": "Clearwater Mall",
+        "EventID":9,
+        "Time":"12:00 PM",
+        "Date":"03/25/2019"
         },
         {
-        "Lat": 74,
-        "Lng": 45,
-        "EventName": "Sweet Valley Ranch",
-        "Date": "03/24/2019",
-        "Time": "12:00:pm",
-        "EventID": 43
+        "Lat":35,
+        "Lng":-86,
+        "EventName": "The Babylon",
+        "EventID":10,
+        "Time":"12:00 PM",
+        "Date":"03/25/2019"
         },
         {
-        "Lat": 93,
-        "Lng": 39,
-        "EventName": "Stardew Valley",
-        "Date": "03/24/2019",
-        "Time": "12:00:pm",
-        "EventID": 45
+        "Lat":36,
+        "Lng":-88,
+        "EventName": "The white house",
+        "EventID":11,
+        "Time":"12:00 PM",
+        "Date":"03/25/2019"
         },
         {
-        "Lat": 80,
-        "Lng": 44,
-        "EventName": "The area by Bob's Burger",
-        "Date": "03/24/2019",
-        "Time": "12:00:pm",
-        "EventID": 47
+        "Lat":38,
+        "Lng":-89,
+        "EventName": "Dragon lair",
+        "EventID":12,
+        "Time":"12:00 PM",
+        "Date":"03/25/2019"
         },
         {
-        "Lat": 117,
-        "Lng": 42,
-        "EventName": "The Land before time",
-        "Date": "03/24/2019",
-        "Time": "12:00:pm",
-        "EventID": 49
+        "Lat":35,
+        "Lng":-80,
+        "EventName": "besy buy",
+        "EventID":13,
+        "Time":"12:00 PM",
+        "Date":"03/25/2019"
         },
 
         {
-            "Lat":33,
-            "Lng":116,
-            "EventName":"Litter clean up",
-            "Date": "03/24/2019",
-        "Time": "12:00:pm",
-            "EventID": 2
+        "Lat":38,
+        "Lng":-83,
+        "EventName": "Checkers",
+        "EventID":14,
+        "Time":"12:00 PM",
+        "Date":"03/25/2019"
         },
-     
+
         {
-            "Lat":44,
-            "Lng":103,
-            "EventName":"Tons of trash",
-            "Date": "03/24/2019",
-            "Time": "12:00:pm",
-            "EventID":4
+        "Lat":34,
+        "Lng":-85,
+        "EventName": "Wakanda",
+        "EventID":15,
+        "Time":"12:00 PM",
+        "Date":"03/25/2019"
         },
-     
+
         {
-            "Lat":34,
-            "Lng":99,
-            "EventName":"Garbaage clean up",
-            "Date": "03/24/2019",
-            "Time": "12:00:pm",
-            "EventID":6
+        "Lat":38,
+        "Lng":-82,
+        "EventName": "The basement",
+        "EventID":16,
+        "Time":"12:00 PM",
+        "Date":"03/25/2019"
         },
-     
+
         {
-            "Lat":45,
-            "Lng":112,
-            "EventName":"Litter for days",
-            "Date": "03/24/2019",
-            "Time": "12:00:pm",
-            "EventID":8
+        "Lat":36,
+        "Lng":-88,
+        "EventName": "DisneyWorld",
+        "EventID":17,
+        "Time":"12:00 PM",
+        "Date":"03/25/2019"
         },
-     
+
         {
-            "Lat":34,
-            "Lng":97,
-            "EventName":"Downtown cleanup!",
-            "Date": "03/24/2019",
-            "Time": "12:00:pm",
-            "EventID":10
+        "Lat":36,
+        "Lng":-87,
+        "EventName": "Windows 32",
+        "EventID":18,
+        "Time":"12:00 PM",
+        "Date":"03/25/2019"
         },
-     
+
         {
-            "Lat":35,
-            "Lng":86,
-            "EventName":"Garbage needs taken care of",
-            "Date": "03/24/2019",
-            "Time": "12:00:pm",
-            "EventID":12
+        "Lat":34,
+        "Lng":-86,
+        "EventName": "The unholy church",
+        "EventID":19,
+        "Time":"12:00 PM",
+        "Date":"03/25/2019"
         },
-     
+
         {
-            "Lat":33,
-            "Lng":86,
-            "EventName":"Garbage day in downtown!",
-            "Date": "03/24/2019",
-            "Time": "12:00:pm",
-            "EventID":14
+        "Lat":35,
+        "Lng":-82,
+        "EventName": "Kamara",
+        "EventID":20,
+        "Time":"12:00 PM",
+        "Date":"03/25/2019"
         },
-     
+
         {
-            "Lat":45,
-            "Lng":102,
-            "EventName":"Trashy trash that needs trashed",
-            "Date": "03/24/2019",
-            "Time": "12:00:pm",
-            "EventID":16
+        "Lat":34,
+        "Lng":-83,
+        "EventName": "Manor",
+        "EventID":21,
+        "Time":"12:00 PM",
+        "Date":"03/25/2019"
         },
-     
+
         {
-            "Lat":42,
-            "Lng":99,
-            "EventName":"University clean up",
-            "Date": "03/24/2019",
-            "Time": "12:00:pm",
-            "EventID":18
+        "Lat":38,
+        "Lng":-89,
+        "EventName":"Kamalot" ,
+        "EventID":22,
+        "Time":"12:00 PM",
+        "Date":"03/25/2019"
         },
-     
+
         {
-            "Lat":43,
-            "Lng":93,
-            "EventName":"River cleaning",
-            "Date": "03/24/2019",
-            "Time": "12:00:pm",
-            "EventID":20
+        "Lat":39,
+        "Lng":-87,
+        "EventName": "The cloud" ,
+        "EventID":23,
+        "Time":"12:00 PM",
+        "Date":"03/25/2019"
         },
-     
+
         {
-            "Lat":40,
-            "Lng":90,
-            "EventName":"Garbage everywhere",
-            "Date": "03/24/2019",
-            "Time": "12:00:pm",
-            "EventID":22
+        "Lat":39,
+        "Lng":-84,
+        "EventName": "Tom & Jerry's House",
+        "EventID":24,
+        "Time":"12:00 PM",
+        "Date":"03/25/2019"
         },
-     
+
         {
-            "Lat":36,
-            "Lng":101,
-            "EventName":"Tons of trash",
-            "Date": "03/24/2019",
-            "Time": "12:00:pm",
-            "EventID":24
-        },
-     
-        {
-            "Lat":36,
-            "Lng":85,
-            "EventName":"Area needs cleaned",
-            "Date": "03/24/2019",
-            "Time": "12:00:pm",
-            "EventID":26
-        },
-     
-        {
-            "Lat":35,
-            "Lng":94,
-            "EventName":"Clean the lake",
-            "Date": "03/24/2019",
-            "Time": "12:00:pm",
-            "EventID":28
-        },
-     
-        {
-            "Lat":43,
-            "Lng":112,
-            "EventName":"Side of road clean up",
-            "Date": "03/24/2019",
-            "Time": "12:00:pm",
-            "EventID":30
-        },
-     
-        {
-            "Lat":42,
-            "Lng":116,
-            "EventName":"Litter cleaners",
-            "Date": "03/24/2019",
-            "Time": "12:00:pm",
-            "EventID":32
-        },
-     
-        {
-            "Lat":34,
-            "Lng":98,
-            "EventName":"Trashtag time!",
-            "Date": "03/24/2019",
-            "Time": "12:00:pm",
-            "EventID":34
-        },
-     
-        {
-            "Lat":38,
-            "Lng":117,
-            "EventName":"City clean up",
-            "Date": "03/24/2019",
-            "Time": "12:00:pm",
-            "EventID":36
-        },
-     
-        {
-            "Lat":43,
-            "Lng":107,
-            "EventName":"Tons of garbage",
-            "Date": "03/24/2019",
-            "Time": "12:00:pm",
-            "EventID":38
-        },
-     
-        {
-            "Lat":42,
-            "Lng":99,
-            "EventName":"Trashy trash",
-            "Date": "03/24/2019",
-            "Time": "12:00:pm",
-            "EventID":40
-        },
-     
-        {
-            "Lat":34,
-            "Lng":96,
-            "EventName":"Too much litter!",
-            "Date": "03/24/2019",
-            "Time": "12:00:pm",
-            "EventID":42
-        },
-     
-        {
-            "Lat":36,
-            "Lng":102,
-            "EventName":"Local clean up",
-            "Date": "03/24/2019",
-            "Time": "12:00:pm",
-            "EventID":44
-        },
-     
-        {
-            "Lat":37,
-            "Lng":118,
-            "EventName":"Garbage time!",
-            "Date": "03/24/2019",
-            "Time": "12:00:pm",
-            "EventID":46
-        },
-     
-        {
-            "Lat":38,
-            "Lng":118,
-            "EventName":"Too much trash!",
-            "Date": "03/24/2019",
-            "Time": "12:00:pm",
-            "EventID":48
-        },
-     
-        {
-            "Lat":37,
-            "Lng":89,
-            "EventName":"Litter for days",
-            "Date": "03/24/2019",
-            "Time": "12:00:pm",
-            "EventID":50
+        "Lat":35,
+        "Lng":-80,
+        "EventName": "Boolean Board",
+        "EventID":25,
+        "Time":"12:00 PM",
+        "Date":"03/25/2019"
         }
-
+        
 ]
