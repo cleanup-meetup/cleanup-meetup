@@ -3,6 +3,7 @@
 :root {
     font-size: 13px;
     --primary-color: #006747;
+    --primary-color-var: #039567;
     --primary-text: #fff;
     --accent-color: #E8EA18;
     --accent-text: #333;
@@ -18,6 +19,16 @@ body {
 
 .main-content {
     padding: 0.75rem;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+a:hover {
+    color: var(--primary-color-var);
 }
 
 /* Loading animation */
@@ -63,6 +74,8 @@ body {
 
 .feature-aside-layout__content {
     flex: 0 1 300px;
+    display: flex;
+    flex-direction: column;
 }
 
 .feature-aside-layout__aside {
@@ -198,4 +211,18 @@ body {
     color: white;
     font-weight: bold;
     padding-top: 3rem;
+}
+
+/* Spacer */
+.spacer {
+    flex-grow: 1;
+}
+
+/* Footer */
+footer {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #333;
+    text-align: center;
+    font-weight: bold;
 }

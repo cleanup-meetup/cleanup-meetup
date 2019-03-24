@@ -98,7 +98,7 @@ function eventsToMarkers(events, map) {
             map: map
         });
 
-        marker.addListener('click', marker => {
+        marker.addListener('click', () => {
             window.location.href = `view-event.html?eventID=${event.EventID}`;
         });
 
@@ -117,5 +117,9 @@ function showAllMarkers(map, markers) {
     markers.forEach(marker => {
         bounds.extend(marker.position);
     });
-    map.fitBounds(bounds);
+    if (markers.length > 5) {
+        map.fitBounds(bounds);
+    } else {
+        map.setCenter(bounds.getCenter());
+    }
 }
