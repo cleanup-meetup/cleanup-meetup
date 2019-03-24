@@ -5,6 +5,7 @@ import json
 from application.models import User, Event
 from werkzeug.utils import secure_filename
 import os
+from geopy.geocoders import Nominatim
 
 UPLOAD_FOLDER = 'IMAGES/'
 
@@ -35,22 +36,22 @@ def upload():
 
     if not file:
         flash ("No file")
-        return redirect(url_for('home.html'))
+        return render_template('index.html')
     if not EventNameFile:
         flash ("Incorrect Name")
-        return redirect(url_for('home.html'))
+        return render_template('index.html')
     if not EventDateFile:
         flash ("Incorrect Date")
-        return redirect(url_for('home.html'))
+        return render_template('index.html')
     if not EventTimeFile:
         flash ("Incorrect Time")
-        return redirect(url_for('home.html'))
+        return render_template('index.html')
     if not EventLocationFile:
         flash ("Incorrect Location")
-        return redirect(url_for('home.html'))
+        return render_template('index.html')
     if not EventDescriptionFile:
         flash ("Incorrect Description")
-        return redirect(url_for('home.html'))
+        return render_template('index.html')
     f = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
     file.save(f)
     print(EventNameFile)
@@ -58,6 +59,9 @@ def upload():
     print(EventTimeFile)
     print(EventLocationFile)
     print(EventDescriptionFile)
+    geolocator = Nominatim(user_agent="cleanup-meetup")
+    location = geolocator.geocode(EventLocationFile)
+    print((location.latitude, location.longitude))
     return render_template('index.html')
 
 @app.route('/create-event', methods=['GET', 'POST'])
