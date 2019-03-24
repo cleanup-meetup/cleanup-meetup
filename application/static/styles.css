@@ -286,6 +286,35 @@ footer {
     font-size: 1rem;
 }
 
+/* Color wash image */
+.image-wash {
+    background: rgba(0,0,50,0.3);
+}
+
+.image-wash__background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+}
+
+.image-wash__content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-text);
+}
+
+/* Events */
+.event-title {
+    color: var(--primary-text);
+}
+
 /* Layout for about_us file */
 
 .about-text {
@@ -294,4 +323,17 @@ footer {
 
 .about-titles {
     text-align: center;
+}
+
+.container-form{
+    text-align: center;
+}
+.logo{
+    height: 500px;
+    width: 500px;
+    background-image: url(/trashLogo.png);
+}
+.flexUs{
+    display:flexbox;
+    flex-direction: row-reverse;
 }
