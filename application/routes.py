@@ -1,5 +1,5 @@
 from flask import render_template, flash, redirect, url_for, request, send_file, make_response
-from application import app, bootstrap, db
+from application import app, bootstrap
 import geocoder
 import json
 from application.models import User, Event

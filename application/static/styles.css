@@ -248,3 +248,17 @@ footer {
 
 .vertical-form label {
     padding: 1.5rem 0 0.5rem 0;
+
+
+}
+/* Layout for about_us file */
+
+.about-text
+{
+    text-align: center;
+}
+
+.about-titles
+{
+    text-align: center;
+}
