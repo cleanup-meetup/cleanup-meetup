@@ -421,7 +421,7 @@ footer {
 
 /** Breakpoints **/
 
-@media only screen and (max-width:60rem) { 
+@media only screen and (max-width:50rem) { 
 	.feature-aside-layout {
         flex-direction: column;
         height: 100%;
@@ -442,7 +442,7 @@ footer {
     }
 }
 
-@media only screen and (max-width:35rem) { 
+@media only screen and (max-width:30rem) { 
     .float-aside {
         float: none;
         width: 100%;
