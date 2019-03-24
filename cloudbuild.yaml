@@ -1,8 +1,8 @@
 steps:
 - name: "docker.io/library/python:3.7"
-  args: ['ls']
-- name: "docker.io/library/python:3.7"
   args: ['pip', 'install', '-r', 'requirements.txt']
+- name: "docker.io/library/python:3.7"
+  args: ['pip', 'install', 'flask']
 - name: "docker.io/library/python:3.7"
   args: ['python', 'application.py']
 timeout: "1600s"
