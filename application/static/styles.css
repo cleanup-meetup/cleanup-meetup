@@ -2,7 +2,7 @@
 
 :root {
     font-size: 13px;
-    --primary-color: rgb(0, 103, 71);
+    --primary-color: #006747;
     --primary-color-var: #039567;
     --primary-text: #fff;
     --accent-color: #E8EA18;
@@ -112,8 +112,7 @@ a:hover {
     font-weight: bold;
     display: flex;
     align-items: center;
-    font-family: Roboto Slab;
-    s
+    font-family: "Roboto Slab";
 }
 
 .navbar__link:hover {

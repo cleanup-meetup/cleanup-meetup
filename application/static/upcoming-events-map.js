@@ -6,7 +6,11 @@ const FUTURE_EVENT_MAP_CONTAINER_CLASS /** @type {string} */ = 'upcoming-events-
 const SINGLE_EVENT_MAP_CONTAINER_CLASS /** @type {string} */ = 'single-event-map';
 const FUTURE_EVENTS_ENDPOINT /** @type {string} */
     = 'future_events_sample.json';
+const MAPS_KEY = 'AIzaSyBtrkN2c8rrSWUdy6-SKqp8stjYBVb3by8';
 
+
+const MAP_ID = 'events-map';
+const SEARCH_BOX_ID = 'events-map-search-box';
 
 /**
  * @typedef {Object} CleanupEvent An upcoming event returned by the API.
@@ -22,25 +26,41 @@ const FUTURE_EVENTS_ENDPOINT /** @type {string} */
  */
 function initMaps() {
     const futureEventMapsContainers = document.getElementsByClassName(FUTURE_EVENT_MAP_CONTAINER_CLASS);
-    futureEventMaps = Array.from(futureEventMapsContainers).map(container => {
-        container.classList.remove('map-container--loading');
-        return new google.maps.Map(container, {
-            center: { lat: -34.397, lng: 150.644 },
-            zoom: 5,
-            disableDefaultUI: true,
-            mapTypeControl: true,
-            mapTypeControlOptions: {
-                position: google.maps.ControlPosition.TOP_RIGHT
-            }
-        });
+    futureEventMapsContainers[0].classList.remove('map-container--loading');
+    const searchMap = new google.maps.Map(futureEventMapsContainers[0], {
+        center: { lat: -34.397, lng: 150.644 },
+        zoom: 5,
+        disableDefaultUI: true,
+        mapTypeControl: true,
+        mapTypeControlOptions: {
+            position: google.maps.ControlPosition.TOP_RIGHT
+        }
     });
-    populateMaps(futureEventMaps);
+
+    const searchBox = document.getElementById(SEARCH_BOX_ID);
+
+    const filterCircle = new google.maps.Circle({
+        strokeColor: '#006747',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#006747',
+        fillOpacity: 0.1,
+        radius: 8000
+    });
+
+    populateMap(searchMap).then(markers => {
+        if (searchBox && futureEventMapsContainers[0]) {
+            searchBox.addEventListener('change', inputBox => {
+                handleSearchInput(inputBox.target.value, searchMap, filterCircle, markers);
+            });
+        }
+    });
 
     const eventMapContainer = document.getElementsByClassName(SINGLE_EVENT_MAP_CONTAINER_CLASS);
     eventMaps = Array.from(eventMapContainer).map(container => {
         container.classList.remove('map-container--loading');
         const coords = { lat: +container.dataset.lat, lng: +container.dataset.lng };
-        let map = new google.maps.Map(container, {
+        const map = new google.maps.Map(container, {
             center: coords,
             zoom: 5,
             disableDefaultUI: true,
@@ -49,29 +69,32 @@ function initMaps() {
             draggable: false,
             scrollwheel: false
         });
-        let marker = new google.maps.Marker({
+        const marker = new google.maps.Marker({
             position: coords,
             map: map
-        })
-        showAllMarkers(map, [marker])
-        return map
+        });
+        showAllMarkers(map, [marker]);
+        return map;
     });
 }
 
 
 /**
  * Load the data and then populate the maps with that data.
- * @param {google.maps.Map[]} maps The maps to load data into.
+ * @param {google.maps.Map} map The maps to load data into.
+ * @return {Promise}
  */
-function populateMaps(maps) {
-    getJSON(FUTURE_EVENTS_ENDPOINT).then(events => {
-        maps.forEach(map => {
+function populateMap(map) {
+    return new Promise((res, rej) => {
+        getJSON(FUTURE_EVENTS_ENDPOINT).then(events => {
             const markers = eventsToMarkers(events, map);
             showAllMarkers(map, markers);
+            res(markers);
+        }).catch(err => {
+            console.trace(err);
+            map.getDiv().classList.add('map-container--error');
+            rej(err);
         });
-    }).catch(err => {
-        console.trace(err);
-        maps.forEach(map => map.getDiv().classList.add('map-container--error'));
     });
 }
 
@@ -136,7 +159,7 @@ function eventsToMarkers(events, map) {
 function showAllMarkers(map, markers) {
     const bounds =
         new google.maps.LatLngBounds(markers[0].position, markers[0].position);
-    if(markers.length > 1) {
+    if (markers.length > 1) {
         markers.forEach(marker => {
             bounds.extend(marker.position);
         });
@@ -144,4 +167,62 @@ function showAllMarkers(map, markers) {
     } else {
         map.panTo(markers[0].position);
     }
+}
+
+
+/**
+ * @param {*} potentialAddress The input, which potentially coresponds to a place.
+ * @return {Promise<{number, number, string}>}
+ */
+function geoCodeAddress(potentialAddress) {
+    const escaped = encodeURIComponent(potentialAddress);
+    return new Promise((res, rej) => {
+        getJSON(`https://maps.googleapis.com/maps/api/geocode/json?address=${escaped}&key=${MAPS_KEY}&region=us`).then(response => {
+            if (response.status === 'OK') {
+                res({
+                    lat: response.results[0].geometry.location.lat,
+                    lng: response.results[0].geometry.location.lng,
+                    nice: response.results[0].formatted_address
+                });
+            } else {
+                rej(response.status);
+            }
+        }).catch(rej);
+    });
+}
+
+/**
+ * Handle the input on key up.
+ * @param {string} input The string input.
+ * @param {google.maps.Map} map The map to filter.
+ * @param {google.maps.Circle} circle The circle to draw.
+ * @param {google.maps.Marker[]} markers The markers to filter.
+ */
+function handleSearchInput(input, map, circle, markers) {
+    geoCodeAddress(input).then(result => {
+        // Technically should work even though it has an extra field
+        circle.setCenter({ lat: result.lat, lng: result.lng });
+        circle.setMap(map);
+        map.fitBounds(circle.getBounds());
+        map.setZoom(map.zoom - 1);
+        markers.forEach(marker => {
+            if (!isInCircle(marker, circle)) {
+                marker.setOpacity(0.3);
+            }
+        });
+    }).catch(err => {
+        circle.setMap(null);
+        markers.forEach(marker => marker.setOpacity(1));
+        console.trace(err);
+    });
+}
+
+/**
+ * Check if the marker is within the circle.
+ * @param {google.maps.Marker} marker The marker to check.
+ * @param {google.maps.Circle} circle The circle to check bounds of.
+ * @return {boolean}
+ */
+function isInCircle(marker, circle) {
+    return google.maps.geometry.spherical.computeDistanceBetween(marker.getPosition(), circle.getCenter()) <= circle.getRadius();
 }
